@@ -20,5 +20,7 @@ class DeckController {
     static func delete(deck: Deck, fromA folder: Folder) {
         CoreDataStack.context.delete(deck)
     }
+    
+    
 }
 
