@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Card" representedClassName=".Card" syncable="YES" codeGenerationType="class">
+        <attribute name="answerImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="answerText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="correctAnswer" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="questionImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="questionText" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="cards" inverseEntity="Deck" syncable="YES"/>
+    </entity>
+    <entity name="Deck" representedClassName=".Deck" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfCards" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Card" inverseName="deck" inverseEntity="Card" syncable="YES"/>
+        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="decks" inverseEntity="Folder" syncable="YES"/>
+    </entity>
+    <entity name="Folder" representedClassName=".Folder" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="decks" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Deck" inverseName="folder" inverseEntity="Deck" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Card" positionX="126" positionY="-72" width="128" height="28"/>
+        <element name="Deck" positionX="-146" positionY="-162" width="128" height="118"/>
+        <element name="Folder" positionX="-326" positionY="-46" width="128" height="73"/>
+    </elements>
+</model>
