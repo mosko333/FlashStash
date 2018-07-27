@@ -11,7 +11,7 @@ import CoreData
 
 
 extension Card {
-    convenience init(deck: Deck, answerImage: NSObject, answerText: String, correctAnswer: Bool, questionImage: NSObject, questionText: String, managedObjectContext: NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(deck: Deck, answerImage: Data, answerText: String, correctAnswer: Bool, questionImage: Data, questionText: String, managedObjectContext: NSManagedObjectContext = CoreDataStack.context) {
         // Initialize into the manage object context
         self.init(context: managedObjectContext)
         self.deck = deck

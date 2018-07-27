@@ -12,7 +12,7 @@ import CoreData
 class CardController {
     
     // This is a static method that belongs to the class so we do not need an instance
-    static func createCardWith(answerImage: NSObject, answerText: String, correctAnswer: Bool, questionImage: NSObject, questionText: String, to deck: Deck) {
+    static func createCardWith(answerImage: Data, answerText: String, correctAnswer: Bool, questionImage: Data, questionText: String, to deck: Deck) {
         
         let _ = Card(deck: deck, answerImage: answerImage, answerText: answerText, correctAnswer: correctAnswer, questionImage: questionImage, questionText: questionText)
         CoreDataStack.save()
