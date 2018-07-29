@@ -12,23 +12,10 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    //////////////////////
-    // MARK: Properties
-    //////////////////////
-
-    //CoreData Static Properties to make it easier to access.
-    static var persistentContainer: NSPersistentContainer {
-        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer
-    }
-    static var viewContext: NSManagedObjectContext {
-        return persistentContainer.viewContext
-    }
-    
-    
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 

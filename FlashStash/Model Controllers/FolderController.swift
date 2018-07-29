@@ -21,12 +21,19 @@ class FolderController {
     static let shared = FolderController()
     
     /// This is our source of TRUTH!!!
-    var folder: [Folder] {
+    var folders: [Folder] {
         
         // we define out request of what we would like to get back. then we tell it to perform that request
         let request: NSFetchRequest<Folder> = Folder.fetchRequest()
         // WE ALLWAYS NEED TO talk to our context first, in order to get what object we want out of it
-        return (try? CoreDataStack.context.fetch(request)) ?? []
+        guard let folderArray = try? CoreDataStack.context.fetch(request) else {
+            print("❌ Error fetching folders from core data"); return [] }
+        if folderArray.count == 0 {
+            print("Creating initial folder")
+            create(folderName: "General")
+            return (try? CoreDataStack.context.fetch(request)) ?? []
+        }
+        return folderArray
     }
     
     init() {

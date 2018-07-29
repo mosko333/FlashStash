@@ -8,10 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		7E0A31AE210BD0870013DCDE /* FolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */; };
-		7E0A31B0210BD09A0013DCDE /* DeckCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31AF210BD09A0013DCDE /* DeckCollectionViewCell.swift */; };
-		7E0A31B2210BD0AF0013DCDE /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31B1210BD0AF0013DCDE /* CardCollectionViewCell.swift */; };
 		7E0A31B6210BD0FA0013DCDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */; };
 		7E31E1F821090A740073190B /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E31E1F721090A740073190B /* CardController.swift */; };
+		7E5B7CE4210D674E00D515A8 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CDD210D674300D515A8 /* OpenSans-Bold.ttf */; };
+		7E5B7CF7210D69EC00D515A8 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CEE210D69EB00D515A8 /* OpenSans-Regular.ttf */; };
+		7E5B7CF8210D69EC00D515A8 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CEF210D69EB00D515A8 /* OpenSans-Semibold.ttf */; };
+		7E5B7CF9210D69EC00D515A8 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CF0210D69EB00D515A8 /* OpenSans-LightItalic.ttf */; };
+		7E5B7CFA210D69EC00D515A8 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CF1210D69EC00D515A8 /* OpenSans-ExtraBoldItalic.ttf */; };
+		7E5B7CFB210D69EC00D515A8 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CF2210D69EC00D515A8 /* OpenSans-SemiboldItalic.ttf */; };
+		7E5B7CFC210D69EC00D515A8 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CF3210D69EC00D515A8 /* OpenSans-Italic.ttf */; };
+		7E5B7CFD210D69EC00D515A8 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CF4210D69EC00D515A8 /* OpenSans-ExtraBold.ttf */; };
+		7E5B7CFE210D69EC00D515A8 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CF5210D69EC00D515A8 /* OpenSans-BoldItalic.ttf */; };
+		7E5B7CFF210D69EC00D515A8 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CF6210D69EC00D515A8 /* OpenSans-Light.ttf */; };
 		7EDF03412107B9FF00DFEEE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF03402107B9FF00DFEEE3 /* AppDelegate.swift */; };
 		7EDF03462107B9FF00DFEEE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDF03442107B9FF00DFEEE3 /* Main.storyboard */; };
 		7EDF03492107B9FF00DFEEE3 /* FlashStash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF03472107B9FF00DFEEE3 /* FlashStash.xcdatamodeld */; };
@@ -39,10 +47,18 @@
 
 /* Begin PBXFileReference section */
 		7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCollectionViewCell.swift; sourceTree = "<group>"; };
-		7E0A31AF210BD09A0013DCDE /* DeckCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCollectionViewCell.swift; sourceTree = "<group>"; };
-		7E0A31B1210BD0AF0013DCDE /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7E31E1F721090A740073190B /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
+		7E5B7CDD210D674300D515A8 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		7E5B7CEE210D69EB00D515A8 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		7E5B7CEF210D69EB00D515A8 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		7E5B7CF0210D69EB00D515A8 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		7E5B7CF1210D69EC00D515A8 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		7E5B7CF2210D69EC00D515A8 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		7E5B7CF3210D69EC00D515A8 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		7E5B7CF4210D69EC00D515A8 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		7E5B7CF5210D69EC00D515A8 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7E5B7CF6210D69EC00D515A8 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		7EDF033D2107B9FF00DFEEE3 /* FlashStash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashStash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDF03402107B9FF00DFEEE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EDF03452107B9FF00DFEEE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E5B7CD9210D66D600D515A8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7E5B7CDD210D674300D515A8 /* OpenSans-Bold.ttf */,
+				7E5B7CF5210D69EC00D515A8 /* OpenSans-BoldItalic.ttf */,
+				7E5B7CF4210D69EC00D515A8 /* OpenSans-ExtraBold.ttf */,
+				7E5B7CF1210D69EC00D515A8 /* OpenSans-ExtraBoldItalic.ttf */,
+				7E5B7CF3210D69EC00D515A8 /* OpenSans-Italic.ttf */,
+				7E5B7CF6210D69EC00D515A8 /* OpenSans-Light.ttf */,
+				7E5B7CF0210D69EB00D515A8 /* OpenSans-LightItalic.ttf */,
+				7E5B7CEE210D69EB00D515A8 /* OpenSans-Regular.ttf */,
+				7E5B7CEF210D69EB00D515A8 /* OpenSans-Semibold.ttf */,
+				7E5B7CF2210D69EC00D515A8 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		7EDF03342107B9FE00DFEEE3 = {
 			isa = PBXGroup;
 			children = (
@@ -133,8 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */,
-				7E0A31AF210BD09A0013DCDE /* DeckCollectionViewCell.swift */,
-				7E0A31B1210BD0AF0013DCDE /* CardCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +192,7 @@
 		7EDF03672107BAEF00DFEEE3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7E5B7CD9210D66D600D515A8 /* Fonts */,
 				7EDF03402107B9FF00DFEEE3 /* AppDelegate.swift */,
 				7EDF034A2107BA0100DFEEE3 /* Assets.xcassets */,
 				7EDF034F2107BA0100DFEEE3 /* Info.plist */,
@@ -261,9 +293,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5B7CFF210D69EC00D515A8 /* OpenSans-Light.ttf in Resources */,
+				7E5B7CF8210D69EC00D515A8 /* OpenSans-Semibold.ttf in Resources */,
+				7E5B7CFD210D69EC00D515A8 /* OpenSans-ExtraBold.ttf in Resources */,
+				7E5B7CFB210D69EC00D515A8 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				7E5B7CF7210D69EC00D515A8 /* OpenSans-Regular.ttf in Resources */,
+				7E5B7CFC210D69EC00D515A8 /* OpenSans-Italic.ttf in Resources */,
+				7E5B7CF9210D69EC00D515A8 /* OpenSans-LightItalic.ttf in Resources */,
+				7E5B7CFE210D69EC00D515A8 /* OpenSans-BoldItalic.ttf in Resources */,
 				7EDF034E2107BA0100DFEEE3 /* LaunchScreen.storyboard in Resources */,
 				7EDF034B2107BA0100DFEEE3 /* Assets.xcassets in Resources */,
+				7E5B7CE4210D674E00D515A8 /* OpenSans-Bold.ttf in Resources */,
 				7EDF03462107B9FF00DFEEE3 /* Main.storyboard in Resources */,
+				7E5B7CFA210D69EC00D515A8 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,9 +329,7 @@
 				7EDF03492107B9FF00DFEEE3 /* FlashStash.xcdatamodeld in Sources */,
 				7EF008312108DDB500A93804 /* TestFile.swift in Sources */,
 				7E0A31B6210BD0FA0013DCDE /* HomeViewController.swift in Sources */,
-				7E0A31B0210BD09A0013DCDE /* DeckCollectionViewCell.swift in Sources */,
 				7E31E1F821090A740073190B /* CardController.swift in Sources */,
-				7E0A31B2210BD0AF0013DCDE /* CardCollectionViewCell.swift in Sources */,
 				7EF0082F2108DD5600A93804 /* CoreDataStack.swift in Sources */,
 				7EF008292107F53F00A93804 /* Card.swift in Sources */,
 				7EDF03412107B9FF00DFEEE3 /* AppDelegate.swift in Sources */,

@@ -10,4 +10,5 @@ import UIKit
 
 class FolderCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var folderNameLabel: UILabel!
 }
