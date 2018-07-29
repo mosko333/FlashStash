@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +19,7 @@
         <!--Home View Controller-->
         <scene sceneID="Wyk-MX-jnd">
             <objects>
-                <viewController id="hhO-CB-ito" customClass="HomeViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hhO-CB-ito" customClass="HomeViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OUH-ne-qxO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,28 +94,70 @@
             </objects>
             <point key="canvasLocation" x="1028" y="88.605697151424295"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Deck List Table View Controller-->
         <scene sceneID="pwr-Cz-ybx">
             <objects>
-                <tableViewController id="6JP-zg-yhf" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DeckListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6JP-zg-yhf" customClass="DeckListTableViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eIt-7T-L4e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="  " rowHeight="118" id="zsi-9k-xg2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="deckCell" rowHeight="118" id="zsi-9k-xg2" customClass="DeckTableViewCell" customModule="FlashStash" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="118"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zsi-9k-xg2" id="wkW-BI-TqB">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="117.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3uh-pn-Jye">
-                                            <rect key="frame" x="20" y="16" width="97" height="85"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xcaDeck" translatesAutoresizingMaskIntoConstraints="NO" id="3uh-pn-Jye">
+                                            <rect key="frame" x="20" y="9.6666666666666643" width="64" height="98"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="98" id="Hop-e2-E6U"/>
+                                                <constraint firstAttribute="width" constant="64" id="pVM-iP-Wsh"/>
+                                            </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kov-u8-Z0O">
+                                            <rect key="frame" x="42" y="25.666666666666671" width="20" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R33-Sm-BVZ">
+                                            <rect key="frame" x="29.333333333333332" y="46.666666666666664" width="45.333333333333343" height="20.999999999999993"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmU-Ge-djU">
+                                            <rect key="frame" x="98" y="25" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Created: 6/7/18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaR-OF-9w5">
+                                            <rect key="frame" x="98" y="57" width="118" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3uh-pn-Jye" firstAttribute="leading" secondItem="wkW-BI-TqB" secondAttribute="leadingMargin" id="45d-SK-Pxf"/>
+                                        <constraint firstItem="R33-Sm-BVZ" firstAttribute="centerX" secondItem="Kov-u8-Z0O" secondAttribute="centerX" id="5KB-aL-fcO"/>
+                                        <constraint firstItem="R33-Sm-BVZ" firstAttribute="top" secondItem="Kov-u8-Z0O" secondAttribute="bottom" id="9Gb-7X-QkL"/>
+                                        <constraint firstItem="3uh-pn-Jye" firstAttribute="top" secondItem="Kov-u8-Z0O" secondAttribute="top" constant="-16" id="JNq-Yd-7eU"/>
+                                        <constraint firstItem="Kov-u8-Z0O" firstAttribute="centerX" secondItem="3uh-pn-Jye" secondAttribute="centerX" id="bhF-Tc-dsi"/>
+                                        <constraint firstItem="3uh-pn-Jye" firstAttribute="centerY" secondItem="wkW-BI-TqB" secondAttribute="centerY" id="tUc-hW-lrD"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="createdDateLabel" destination="LaR-OF-9w5" id="fnP-Jx-EkY"/>
+                                    <outlet property="numberOfCardsLabel" destination="Kov-u8-Z0O" id="Waa-Kd-WrH"/>
+                                    <outlet property="titleLabel" destination="zmU-Ge-djU" id="6WV-UA-1YL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -128,7 +171,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2D-5v-Fo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876.8115942028987" y="87.228260869565219"/>
+            <point key="canvasLocation" x="1754" y="84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XSV-mi-j2H">
@@ -152,6 +195,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="xcaDeck" width="72" height="104"/>
         <image name="xcaFolder" width="166" height="141"/>
     </resources>
 </document>

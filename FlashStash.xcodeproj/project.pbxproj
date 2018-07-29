@@ -20,6 +20,8 @@
 		7E5B7CFD210D69EC00D515A8 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CF4210D69EC00D515A8 /* OpenSans-ExtraBold.ttf */; };
 		7E5B7CFE210D69EC00D515A8 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CF5210D69EC00D515A8 /* OpenSans-BoldItalic.ttf */; };
 		7E5B7CFF210D69EC00D515A8 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CF6210D69EC00D515A8 /* OpenSans-Light.ttf */; };
+		7E5B7D01210D6EE800D515A8 /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5B7D00210D6EE800D515A8 /* DeckTableViewCell.swift */; };
+		7E5B7D03210D703200D515A8 /* DeckListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5B7D02210D703200D515A8 /* DeckListTableViewController.swift */; };
 		7EDF03412107B9FF00DFEEE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF03402107B9FF00DFEEE3 /* AppDelegate.swift */; };
 		7EDF03462107B9FF00DFEEE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDF03442107B9FF00DFEEE3 /* Main.storyboard */; };
 		7EDF03492107B9FF00DFEEE3 /* FlashStash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF03472107B9FF00DFEEE3 /* FlashStash.xcdatamodeld */; };
@@ -59,6 +61,8 @@
 		7E5B7CF4210D69EC00D515A8 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		7E5B7CF5210D69EC00D515A8 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		7E5B7CF6210D69EC00D515A8 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		7E5B7D00210D6EE800D515A8 /* DeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
+		7E5B7D02210D703200D515A8 /* DeckListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListTableViewController.swift; sourceTree = "<group>"; };
 		7EDF033D2107B9FF00DFEEE3 /* FlashStash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashStash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDF03402107B9FF00DFEEE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EDF03452107B9FF00DFEEE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */,
+				7E5B7D00210D6EE800D515A8 /* DeckTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */,
+				7E5B7D02210D703200D515A8 /* DeckListTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -326,10 +332,12 @@
 				7EF008352108F21F00A93804 /* DeckController.swift in Sources */,
 				7EF0082B2107F5B900A93804 /* Deck.swift in Sources */,
 				7EF0082D2107F5CF00A93804 /* Folder.swift in Sources */,
+				7E5B7D01210D6EE800D515A8 /* DeckTableViewCell.swift in Sources */,
 				7EDF03492107B9FF00DFEEE3 /* FlashStash.xcdatamodeld in Sources */,
 				7EF008312108DDB500A93804 /* TestFile.swift in Sources */,
 				7E0A31B6210BD0FA0013DCDE /* HomeViewController.swift in Sources */,
 				7E31E1F821090A740073190B /* CardController.swift in Sources */,
+				7E5B7D03210D703200D515A8 /* DeckListTableViewController.swift in Sources */,
 				7EF0082F2108DD5600A93804 /* CoreDataStack.swift in Sources */,
 				7EF008292107F53F00A93804 /* Card.swift in Sources */,
 				7EDF03412107B9FF00DFEEE3 /* AppDelegate.swift in Sources */,
