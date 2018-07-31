@@ -48,7 +48,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="156" height="117"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-3V-X1P">
-                                                    <rect key="frame" x="24" y="56.999999999999993" width="108" height="24.666666666666664"/>
+                                                    <rect key="frame" x="24" y="59" width="108" height="21"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -181,6 +181,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oC5-AD-iKV">
                             <connections>
                                 <action selector="addBtnPressed:" destination="6JP-zg-yhf" id="3f3-i1-fQz"/>
+                                <segue destination="Aag-rn-YZC" kind="show" identifier="toAddCard" id="Y5J-Tr-HLW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -195,7 +196,7 @@
             <objects>
                 <viewController id="Aag-rn-YZC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Brs-zY-EtZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="n2r-lJ-MpR"/>
@@ -214,27 +215,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xcaMoreDownArrow" translatesAutoresizingMaskIntoConstraints="NO" id="sGQ-CG-d06">
-                                <rect key="frame" x="354" y="254" width="20" height="20"/>
+                                <rect key="frame" x="354" y="231" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="eVP-ic-Oe3"/>
                                     <constraint firstAttribute="width" constant="20" id="g1t-Vx-8x4"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFS-8z-8uN">
-                                <rect key="frame" x="24.000000000000007" y="146.66666666666666" width="104.66666666666669" height="24.666666666666657"/>
+                                <rect key="frame" x="23.999999999999993" y="131" width="99.333333333333314" height="21"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45Z-ww-y2t">
-                                <rect key="frame" x="24" y="179" width="366" height="30"/>
+                                <rect key="frame" x="24" y="159.66666666666666" width="366" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DC-hH-nn4">
-                                <rect key="frame" x="24" y="217" width="70" height="24.666666666666657"/>
+                                <rect key="frame" x="24" y="197.66666666666669" width="69" height="21"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -248,20 +249,20 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Stash Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AjW-43-Sut">
-                                <rect key="frame" x="24" y="249" width="366" height="30"/>
+                                <rect key="frame" x="24" y="226" width="366" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a New Deck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNz-oC-JMb">
-                                <rect key="frame" x="23.999999999999986" y="16" width="217.66666666666663" height="33"/>
+                                <rect key="frame" x="24" y="16" width="207.66666666666666" height="28"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a deck of flashcards to study by first entering a name and picking a Stash to save it in." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYl-kd-oAP">
-                                <rect key="frame" x="24" y="57.000000000000007" width="366" height="73.666666666666686"/>
+                                <rect key="frame" x="24" y="52" width="366" height="63"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

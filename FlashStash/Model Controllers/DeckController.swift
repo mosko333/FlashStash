@@ -17,8 +17,16 @@ class DeckController {
         CoreDataStack.save()
     }
     
+    static func update(deck: Deck, newName: String) {
+        deck.name = newName
+        CoreDataStack.save()
+    }
+    
     static func delete(deck: Deck, fromA folder: Folder) {
-        CoreDataStack.context.delete(deck)
+        guard let index = folder.decks?.index(of: deck),
+            let deckToDelete = folder.decks?.object(at: index) as? Deck else { return }
+        CoreDataStack.context.delete(deckToDelete)
+        CoreDataStack.save()
     }
 }
 

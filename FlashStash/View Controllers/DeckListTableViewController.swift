@@ -15,11 +15,8 @@ class DeckListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.title = folder?.name
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,7 +25,7 @@ class DeckListTableViewController: UITableViewController {
     }
     
     @IBAction func addBtnPressed(_ sender: UIBarButtonItem) {
-        presentDeckNamingAlertController()
+        presentDeckNamingAlertController(deck: nil)
     }
     
     
@@ -62,12 +59,17 @@ class DeckListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
-            //TODO: Delete the row at indexPath here
+            guard let folder = self.folder,
+                let deck = folder.decks?[indexPath.row] as? Deck else { return }
+            DeckController.delete(deck: deck, fromA: folder)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
         deleteAction.backgroundColor = .red
         
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
-            //TODO: edit the row at indexPath here
+            guard let folder = self.folder,
+                let deck = folder.decks?[indexPath.row] as? Deck else { return }
+            self.presentDeckNamingAlertController(deck: deck)
         }
         editAction.backgroundColor = .blue
         
@@ -127,7 +129,7 @@ class DeckListTableViewController: UITableViewController {
 
 // MARK: - Create and Present AlertController
 extension DeckListTableViewController {
-    func presentDeckNamingAlertController() {
+    func presentDeckNamingAlertController(deck: Deck?) {
         // 0.5 - Create a optional textfield variable
         var deckNameTextField: UITextField?
         // 1 - Initialize the actual alert controller
@@ -143,7 +145,11 @@ extension DeckListTableViewController {
             guard let deckName = deckNameTextField?.text,
                 !deckName.isEmpty,
                 let folder = self.folder else { return }
-            DeckController.createDeckWith(name: deckName, to: folder)
+            if let deck = deck {
+                DeckController.update(deck: deck, newName: deckName)
+            } else {
+                DeckController.createDeckWith(name: deckName, to: folder)
+            }
             self.tableView.reloadData()
             //            self.tableView.reloadData()
             // AKA What happens when we press the add button ^^^^^^^
