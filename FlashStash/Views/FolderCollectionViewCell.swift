@@ -21,10 +21,11 @@ class FolderCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegat
     override func awakeFromNib() {
         super.awakeFromNib()
         geture.delegate = self
-        superview?.addGestureRecognizer(geture)
+        addGestureRecognizer(geture)
     }
     
     @objc func longPress() {
+        print("Long press")
         delegate?.selectedFolder(cell: self)
     }
 }

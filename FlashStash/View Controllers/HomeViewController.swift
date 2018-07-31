@@ -10,13 +10,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    var folder = FolderController.shared.folders[0]
     @IBOutlet weak var folderCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        //        let addDeckViewController = self.childViewControllers[0] as? AddDeckViewController
-        //        addDeckViewController?.delegate = self
     }
     
     
@@ -25,7 +24,7 @@ class HomeViewController: UIViewController {
         //let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         let actionSheet = UIAlertController()
         actionSheet.addAction(UIAlertAction(title: "Create A New Stash", style: .default, handler: { (action:UIAlertAction) in
-            self.presentFolderNamingAlertController()
+            self.presentFolderNamingAlertController(cell: nil)
             
         }))
         
@@ -43,14 +42,11 @@ class HomeViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDeckList" {
-            if let destinationVC = segue.destination as? DeckListTableViewController,
-                let indexPath = sender as? IndexPath {
-                let folder = FolderController.shared.folders[indexPath.row]
+            if let destinationVC = segue.destination as? DeckListTableViewController {
                 destinationVC.folder = folder
             }
         }
     }
-    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -72,17 +68,24 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let cell = folderCollectionView.dequeueReusableCell(withReuseIdentifier: "folderCell", for: indexPath) as! FolderCollectionViewCell
         cell.folderNameLabel.text = FolderController.shared.folders[indexPath.row].name
+        cell.delegate = self
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        folder = FolderController.shared.folders[indexPath.row]
         performSegue(withIdentifier: "toDeckList", sender: indexPath)
+    }
+    
+    func findFolderForCell(cell: FolderCollectionViewCell) -> Folder {
+        guard let indexPath = self.folderCollectionView.indexPath(for: cell) else { return Folder()}
+        return FolderController.shared.folders[indexPath.row]
     }
 }
 
 // MARK: - Create and Present AlertController
 extension HomeViewController {
-    func presentFolderNamingAlertController() {
+    func presentFolderNamingAlertController(cell: FolderCollectionViewCell?) {
         // 0.5 - Create a optional textfield variable
         var folderNameTextField: UITextField?
         // 1 - Initialize the actual alert controller
@@ -95,8 +98,14 @@ extension HomeViewController {
         // 3 - Add Actions
         let addAction = UIAlertAction(title: "Add", style: .default) { (_) in
             // AKA What happens when we press the add button VVVVVVV
-            guard let folderName = folderNameTextField?.text else { return }
+            guard let folderName = folderNameTextField?.text,
+            !folderName.isEmpty else { return }
+            if let cell = cell {
+                let folder = self.findFolderForCell(cell: cell)
+                FolderController.shared.update(folder: folder, newName: folderName)
+            } else {
             FolderController.shared.create(folderName: folderName)
+            }
             self.folderCollectionView.reloadData()
             //            self.tableView.reloadData()
             // AKA What happens when we press the add button ^^^^^^^
@@ -112,8 +121,43 @@ extension HomeViewController {
 
 extension HomeViewController: DeckCreatedInNewFolderDelegate {
     func deckCreatedWith(folder: Folder) {
-        
     }
-    
-    
 }
+
+extension HomeViewController: FolderCellEditDelegate {
+    func selectedFolder(cell: FolderCollectionViewCell) {
+        let actionSheet = UIAlertController()
+        actionSheet.addAction(UIAlertAction(title: "Rename Your Stash", style: .default, handler: { (action:UIAlertAction) in
+            self.presentFolderNamingAlertController(cell: cell)
+            
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Delete Your Stash", style: .destructive, handler: { (action:UIAlertAction) in
+                let folder = self.findFolderForCell(cell: cell)
+                FolderController.shared.delete(folder: folder)
+                self.folderCollectionView.reloadData()
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
