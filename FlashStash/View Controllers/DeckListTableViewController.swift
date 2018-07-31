@@ -9,6 +9,8 @@
 import UIKit
 
 class DeckListTableViewController: UITableViewController {
+    
+    var folder: Folder?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +26,22 @@ class DeckListTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
 
     // MARK: - Table view data source
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
+        return folder?.decks?.count ?? 0
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "deckCell", for: indexPath) as? DeckTableViewCell {
+            let deck = folder?.decks?[indexPath.row] as? Deck
+            cell.titleLabel.text = deck?.name
             return cell
         }
 
@@ -46,17 +52,17 @@ class DeckListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
-            //TODO: edit the row at indexPath here
-        }
-        editAction.backgroundColor = .blue
-        
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
             //TODO: Delete the row at indexPath here
         }
         deleteAction.backgroundColor = .red
         
-        return [editAction,deleteAction]
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
+            //TODO: edit the row at indexPath here
+        }
+        editAction.backgroundColor = .blue
+        
+        return [deleteAction, editAction]
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
