@@ -10,6 +10,8 @@
 		7E0A31AE210BD0870013DCDE /* FolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */; };
 		7E0A31B6210BD0FA0013DCDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */; };
 		7E31E1F821090A740073190B /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E31E1F721090A740073190B /* CardController.swift */; };
+		7E4568BC21113B0D00F3B1C6 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4568BB21113B0D00F3B1C6 /* CardListViewController.swift */; };
+		7E4568BE21113C9200F3B1C6 /* CardListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4568BD21113C9200F3B1C6 /* CardListCollectionViewCell.swift */; };
 		7E5B7CE4210D674E00D515A8 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CDD210D674300D515A8 /* OpenSans-Bold.ttf */; };
 		7E5B7CF7210D69EC00D515A8 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CEE210D69EB00D515A8 /* OpenSans-Regular.ttf */; };
 		7E5B7CF8210D69EC00D515A8 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E5B7CEF210D69EB00D515A8 /* OpenSans-Semibold.ttf */; };
@@ -66,6 +68,8 @@
 		7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7E31E1F721090A740073190B /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
+		7E4568BB21113B0D00F3B1C6 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
+		7E4568BD21113C9200F3B1C6 /* CardListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E5B7CDD210D674300D515A8 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		7E5B7CEE210D69EB00D515A8 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		7E5B7CEF210D69EB00D515A8 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
@@ -161,6 +165,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E4568BA21113AD500F3B1C6 /* CropVCs */ = {
+			isa = PBXGroup;
+			children = (
+				7E8213E62111251500E06F63 /* CropViewController */,
+				7E8213B62111251500E06F63 /* TOCropViewController */,
+			);
+			path = CropVCs;
+			sourceTree = "<group>";
+		};
 		7E5B7CD9210D66D600D515A8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +333,7 @@
 			children = (
 				7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */,
 				7E5B7D00210D6EE800D515A8 /* DeckTableViewCell.swift */,
+				7E4568BD21113C9200F3B1C6 /* CardListCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,11 +341,11 @@
 		7EDF03652107BACA00DFEEE3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7E8213E62111251500E06F63 /* CropViewController */,
-				7E8213B62111251500E06F63 /* TOCropViewController */,
+				7E4568BA21113AD500F3B1C6 /* CropVCs */,
 				7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */,
 				7E5B7D02210D703200D515A8 /* DeckListTableViewController.swift */,
 				7E5B7D04210EA17200D515A8 /* AddDeckViewController.swift */,
+				7E4568BB21113B0D00F3B1C6 /* CardListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -519,6 +533,7 @@
 				7E8213F22111251500E06F63 /* TOCropOverlayView.m in Sources */,
 				7E8213EE2111251500E06F63 /* TOCropViewController.m in Sources */,
 				7E31E1F821090A740073190B /* CardController.swift in Sources */,
+				7E4568BC21113B0D00F3B1C6 /* CardListViewController.swift in Sources */,
 				7E5B7D03210D703200D515A8 /* DeckListTableViewController.swift in Sources */,
 				7EF0082F2108DD5600A93804 /* CoreDataStack.swift in Sources */,
 				7EF008292107F53F00A93804 /* Card.swift in Sources */,
@@ -526,6 +541,7 @@
 				7EDF03412107B9FF00DFEEE3 /* AppDelegate.swift in Sources */,
 				7EF008332108EF1C00A93804 /* FolderController.swift in Sources */,
 				7E0A31AE210BD0870013DCDE /* FolderCollectionViewCell.swift in Sources */,
+				7E4568BE21113C9200F3B1C6 /* CardListCollectionViewCell.swift in Sources */,
 				7E8213F02111251500E06F63 /* TOCropScrollView.m in Sources */,
 				7E8213EC2111251500E06F63 /* TOCropViewControllerTransitioning.m in Sources */,
 			);

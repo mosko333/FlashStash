@@ -17,6 +17,9 @@
         <array key="OpenSans-Semibold.ttf">
             <string>OpenSans-Semibold</string>
         </array>
+        <array key="TragicMarker.otf">
+            <string>TragicMarker-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Home View Controller-->
@@ -48,7 +51,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="156" height="117"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-3V-X1P">
-                                                    <rect key="frame" x="24" y="59" width="108" height="21"/>
+                                                    <rect key="frame" x="24" y="56.333333333333336" width="108" height="24.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -164,6 +167,7 @@
                                     <outlet property="createdDateLabel" destination="LaR-OF-9w5" id="fnP-Jx-EkY"/>
                                     <outlet property="numberOfCardsLabel" destination="Kov-u8-Z0O" id="Waa-Kd-WrH"/>
                                     <outlet property="titleLabel" destination="zmU-Ge-djU" id="6WV-UA-1YL"/>
+                                    <segue destination="Aag-rn-YZC" kind="show" identifier="toCardList" id="GOY-cx-hNV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -181,7 +185,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oC5-AD-iKV">
                             <connections>
                                 <action selector="addBtnPressed:" destination="6JP-zg-yhf" id="3f3-i1-fQz"/>
-                                <segue destination="Aag-rn-YZC" kind="show" identifier="toAddCard" id="Y5J-Tr-HLW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -191,20 +194,123 @@
             </objects>
             <point key="canvasLocation" x="1949" y="473"/>
         </scene>
-        <!--View Controller-->
+        <!--Card List View Controller-->
         <scene sceneID="c9d-BJ-SkE">
             <objects>
-                <viewController id="Aag-rn-YZC" sceneMemberID="viewController">
+                <viewController id="Aag-rn-YZC" customClass="CardListViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Brs-zY-EtZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add A Card To This Deck!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sE-O2-VTl">
+                                <rect key="frame" x="81" y="68" width="253" height="117"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="GFd-PO-edk"/>
+                                    <constraint firstAttribute="width" constant="253" id="kpI-4q-94J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TragicMarker-Regular" family="Tragic Marker" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-mu-d7Q">
+                                <rect key="frame" x="36" y="16" width="342" height="656"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="44" id="org-CM-meq">
+                                    <size key="itemSize" width="149" height="206"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Mob-0G-Db1" customClass="CardListCollectionViewCell" customModule="FlashStash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="149" height="206"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="149" height="206"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xcaCardListCell" translatesAutoresizingMaskIntoConstraints="NO" id="S3G-Zc-5ga">
+                                                    <rect key="frame" x="0.0" y="0.0" width="149" height="206"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gj2-zI-ily">
+                                                    <rect key="frame" x="10" y="28" width="129" height="168"/>
+                                                </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ro8-e0-gL4">
+                                                    <rect key="frame" x="10" y="28" width="129" height="168"/>
+                                                    <string key="text">Cauliflower cheese macaroni cheese cut the cheese. Gouda hard cheese cheesecake gouda manchego cheesy feet danish fontina queso. The big cheese stinking bishop cow roquefort goat cheese triangles cheese slices danish fontina.</string>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="ro8-e0-gL4" secondAttribute="bottom" constant="2" id="5fl-vb-wj8"/>
+                                            <constraint firstItem="S3G-Zc-5ga" firstAttribute="top" secondItem="Mob-0G-Db1" secondAttribute="top" id="CXe-0B-lcM"/>
+                                            <constraint firstAttribute="trailing" secondItem="S3G-Zc-5ga" secondAttribute="trailing" id="Cf8-KX-9e9"/>
+                                            <constraint firstAttribute="bottom" secondItem="S3G-Zc-5ga" secondAttribute="bottom" id="P7v-fL-wUc"/>
+                                            <constraint firstItem="ro8-e0-gL4" firstAttribute="leading" secondItem="Mob-0G-Db1" secondAttribute="leadingMargin" constant="2" id="Rsk-Pt-7MT"/>
+                                            <constraint firstItem="gj2-zI-ily" firstAttribute="leading" secondItem="ro8-e0-gL4" secondAttribute="leading" id="U0p-Lb-YLd"/>
+                                            <constraint firstItem="gj2-zI-ily" firstAttribute="height" secondItem="ro8-e0-gL4" secondAttribute="height" id="ZMV-vw-3Bf"/>
+                                            <constraint firstItem="gj2-zI-ily" firstAttribute="width" secondItem="ro8-e0-gL4" secondAttribute="width" id="f0Z-Pa-KSW"/>
+                                            <constraint firstItem="ro8-e0-gL4" firstAttribute="top" secondItem="Mob-0G-Db1" secondAttribute="topMargin" constant="20" id="jql-OH-8Ue"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ro8-e0-gL4" secondAttribute="trailing" constant="2" id="pdO-He-Rts"/>
+                                            <constraint firstItem="S3G-Zc-5ga" firstAttribute="leading" secondItem="Mob-0G-Db1" secondAttribute="leading" id="th1-bV-3fT"/>
+                                            <constraint firstItem="gj2-zI-ily" firstAttribute="top" secondItem="ro8-e0-gL4" secondAttribute="top" id="xlh-OL-f7b"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="questionImage" destination="gj2-zI-ily" id="tCG-Uw-RiC"/>
+                                            <outlet property="questionTextLabel" destination="ro8-e0-gL4" id="oAz-wk-yQT"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ku-Fm-oTT">
+                                <rect key="frame" x="145" y="572" width="124" height="52"/>
+                                <color key="backgroundColor" red="0.38823529411764707" green="0.83137254901960789" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="QUI-XC-Epz"/>
+                                    <constraint firstAttribute="height" constant="52" id="f4b-4H-fPN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
+                                <state key="normal" title="Study!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="26"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3sE-O2-VTl" firstAttribute="centerX" secondItem="Brs-zY-EtZ" secondAttribute="centerX" id="431-qs-zoX"/>
+                            <constraint firstItem="6Ku-Fm-oTT" firstAttribute="centerX" secondItem="Brs-zY-EtZ" secondAttribute="centerX" id="8ec-Zn-SAR"/>
+                            <constraint firstItem="l1a-mu-d7Q" firstAttribute="leading" secondItem="n2r-lJ-MpR" secondAttribute="leading" constant="36" id="CHB-11-qny"/>
+                            <constraint firstItem="n2r-lJ-MpR" firstAttribute="bottom" secondItem="6Ku-Fm-oTT" secondAttribute="bottom" constant="48" id="Rrn-OL-Sxn"/>
+                            <constraint firstItem="l1a-mu-d7Q" firstAttribute="trailing" secondItem="n2r-lJ-MpR" secondAttribute="trailing" constant="-36" id="SCD-14-f92"/>
+                            <constraint firstItem="n2r-lJ-MpR" firstAttribute="bottom" secondItem="l1a-mu-d7Q" secondAttribute="bottom" id="XwF-h7-Xsy"/>
+                            <constraint firstItem="3sE-O2-VTl" firstAttribute="top" secondItem="n2r-lJ-MpR" secondAttribute="top" constant="68" id="c7f-sU-LFo"/>
+                            <constraint firstItem="l1a-mu-d7Q" firstAttribute="top" secondItem="n2r-lJ-MpR" secondAttribute="top" constant="16" id="wVk-Xd-PAN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="n2r-lJ-MpR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fc1-Da-gMp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ifR-Jy-OSy">
+                            <connections>
+                                <action selector="addBtnTapped:" destination="Aag-rn-YZC" id="HcN-ur-wdC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cardListCollectionView" destination="l1a-mu-d7Q" id="w3t-yv-hMS"/>
+                        <outlet property="emptyDeckLabel" destination="3sE-O2-VTl" id="KZe-EG-ioy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnq-Yw-jRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2852" y="473"/>
+            <point key="canvasLocation" x="2850.7246376811595" y="472.82608695652175"/>
         </scene>
         <!--Add Deck View Controller-->
         <scene sceneID="dMn-9d-BQa">
@@ -215,27 +321,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xcaMoreDownArrow" translatesAutoresizingMaskIntoConstraints="NO" id="sGQ-CG-d06">
-                                <rect key="frame" x="354" y="231" width="20" height="20"/>
+                                <rect key="frame" x="354" y="254" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="eVP-ic-Oe3"/>
                                     <constraint firstAttribute="width" constant="20" id="g1t-Vx-8x4"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFS-8z-8uN">
-                                <rect key="frame" x="23.999999999999993" y="131" width="99.333333333333314" height="21"/>
+                                <rect key="frame" x="24.000000000000007" y="146.66666666666666" width="104.66666666666669" height="24.666666666666657"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45Z-ww-y2t">
-                                <rect key="frame" x="24" y="159.66666666666666" width="366" height="30"/>
+                                <rect key="frame" x="24" y="179" width="366" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DC-hH-nn4">
-                                <rect key="frame" x="24" y="197.66666666666669" width="69" height="21"/>
+                                <rect key="frame" x="24" y="217" width="70" height="24.666666666666657"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -249,20 +355,20 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Stash Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AjW-43-Sut">
-                                <rect key="frame" x="24" y="226" width="366" height="30"/>
+                                <rect key="frame" x="24" y="249" width="366" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a New Deck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNz-oC-JMb">
-                                <rect key="frame" x="24" y="16" width="207.66666666666666" height="28"/>
+                                <rect key="frame" x="23.999999999999986" y="16" width="217.66666666666663" height="33"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a deck of flashcards to study by first entering a name and picking a Stash to save it in." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYl-kd-oAP">
-                                <rect key="frame" x="24" y="52" width="366" height="63"/>
+                                <rect key="frame" x="24" y="57.000000000000007" width="366" height="73.666666666666686"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -339,6 +445,7 @@
     </scenes>
     <resources>
         <image name="xcaBackChevron" width="12" height="21"/>
+        <image name="xcaCardListCell" width="157" height="213"/>
         <image name="xcaDeck" width="72" height="104"/>
         <image name="xcaFolder" width="166" height="141"/>
         <image name="xcaMoreDownArrow" width="18" height="18"/>
