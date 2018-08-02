@@ -59,10 +59,7 @@ class DeckListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
-            guard let folder = self.folder,
-                let deck = folder.decks?[indexPath.row] as? Deck else { return }
-            DeckController.delete(deck: deck, fromA: folder)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.presentDeckDeleteAlertController(indexPath: indexPath)
         }
         deleteAction.backgroundColor = .red
         
@@ -122,6 +119,26 @@ extension DeckListTableViewController {
             self.tableView.reloadData()
             //            self.tableView.reloadData()
             // AKA What happens when we press the add button ^^^^^^^
+        }
+        let cancelAction  = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        // 4 - Add actions to alert controller
+        alertController.addAction(addAction)
+        alertController.addAction(cancelAction)
+        // 5 - Present Alert Controller
+        present(alertController, animated: true)
+    }
+    
+    func presentDeckDeleteAlertController(indexPath: IndexPath) {
+
+        let alertController = UIAlertController(title: "Are You Sure You Want To Delete This Deck", message: "", preferredStyle: .alert)
+        
+        // 3 - Add Actions
+        let addAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
+            // AKA What happens when we press the add button
+            guard let folder = self.folder,
+                let deck = folder.decks?[indexPath.row] as? Deck else { return }
+            DeckController.delete(deck: deck, fromA: folder)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
         let cancelAction  = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         // 4 - Add actions to alert controller

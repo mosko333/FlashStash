@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7E0A31AE210BD0870013DCDE /* FolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */; };
 		7E0A31B6210BD0FA0013DCDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */; };
+		7E23DF5F211225E400ECB907 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */; };
+		7E23DF612112787F00ECB907 /* TextView+CenterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23DF602112787F00ECB907 /* TextView+CenterText.swift */; };
 		7E31E1F821090A740073190B /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E31E1F721090A740073190B /* CardController.swift */; };
 		7E4568BC21113B0D00F3B1C6 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4568BB21113B0D00F3B1C6 /* CardListViewController.swift */; };
 		7E4568BE21113C9200F3B1C6 /* CardListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4568BD21113C9200F3B1C6 /* CardListCollectionViewCell.swift */; };
@@ -67,6 +69,8 @@
 /* Begin PBXFileReference section */
 		7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardViewController.swift; sourceTree = "<group>"; };
+		7E23DF602112787F00ECB907 /* TextView+CenterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextView+CenterText.swift"; sourceTree = "<group>"; };
 		7E31E1F721090A740073190B /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		7E4568BB21113B0D00F3B1C6 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		7E4568BD21113C9200F3B1C6 /* CardListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -165,6 +169,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E23DF622112793A00ECB907 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7E23DF602112787F00ECB907 /* TextView+CenterText.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7E4568BA21113AD500F3B1C6 /* CropVCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +358,7 @@
 				7E5B7D02210D703200D515A8 /* DeckListTableViewController.swift */,
 				7E5B7D04210EA17200D515A8 /* AddDeckViewController.swift */,
 				7E4568BB21113B0D00F3B1C6 /* CardListViewController.swift */,
+				7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -364,6 +377,7 @@
 		7EDF03672107BAEF00DFEEE3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7E23DF622112793A00ECB907 /* Extensions */,
 				7E5B7CD9210D66D600D515A8 /* Fonts */,
 				7EDF03402107B9FF00DFEEE3 /* AppDelegate.swift */,
 				7EDF034A2107BA0100DFEEE3 /* Assets.xcassets */,
@@ -519,9 +533,11 @@
 			files = (
 				7EF008352108F21F00A93804 /* DeckController.swift in Sources */,
 				7E5B7D05210EA17200D515A8 /* AddDeckViewController.swift in Sources */,
+				7E23DF5F211225E400ECB907 /* CreateCardViewController.swift in Sources */,
 				7EF0082B2107F5B900A93804 /* Deck.swift in Sources */,
 				7E8213F32111251500E06F63 /* TOCropToolbar.m in Sources */,
 				7E8213F12111251500E06F63 /* TOCropView.m in Sources */,
+				7E23DF612112787F00ECB907 /* TextView+CenterText.swift in Sources */,
 				7E8213ED2111251500E06F63 /* TOCroppedImageAttributes.m in Sources */,
 				7E8213F52111251500E06F63 /* CropViewController.swift in Sources */,
 				7E8213F42111251500E06F63 /* UIImage+CropRotate.m in Sources */,
