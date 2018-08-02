@@ -54,6 +54,9 @@
 		7EF008312108DDB500A93804 /* TestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF008302108DDB500A93804 /* TestFile.swift */; };
 		7EF008332108EF1C00A93804 /* FolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF008322108EF1C00A93804 /* FolderController.swift */; };
 		7EF008352108F21F00A93804 /* DeckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF008342108F21F00A93804 /* DeckController.swift */; };
+		7EF78AEC2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AEB2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift */; };
+		7EF78AEF2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AEE2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift */; };
+		7EF78AF12112BC3200E62C31 /* TwoSectionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AF02112BC3200E62C31 /* TwoSectionsContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +152,9 @@
 		7EF008302108DDB500A93804 /* TestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFile.swift; sourceTree = "<group>"; };
 		7EF008322108EF1C00A93804 /* FolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderController.swift; sourceTree = "<group>"; };
 		7EF008342108F21F00A93804 /* DeckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckController.swift; sourceTree = "<group>"; };
+		7EF78AEB2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSectionAddContainerViewController.swift; sourceTree = "<group>"; };
+		7EF78AEE2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSectionShowContainerViewController.swift; sourceTree = "<group>"; };
+		7EF78AF02112BC3200E62C31 /* TwoSectionsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSectionsContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,12 +359,12 @@
 		7EDF03652107BACA00DFEEE3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7EF78AED2112BBD600E62C31 /* CreateCardVC's */,
 				7E4568BA21113AD500F3B1C6 /* CropVCs */,
 				7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */,
 				7E5B7D02210D703200D515A8 /* DeckListTableViewController.swift */,
 				7E5B7D04210EA17200D515A8 /* AddDeckViewController.swift */,
 				7E4568BB21113B0D00F3B1C6 /* CardListViewController.swift */,
-				7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -396,6 +402,17 @@
 				7EF0082E2108DD5600A93804 /* CoreDataStack.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7EF78AED2112BBD600E62C31 /* CreateCardVC's */ = {
+			isa = PBXGroup;
+			children = (
+				7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */,
+				7EF78AEB2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift */,
+				7EF78AEE2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift */,
+				7EF78AF02112BC3200E62C31 /* TwoSectionsContainerViewController.swift */,
+			);
+			path = "CreateCardVC's";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,6 +555,7 @@
 				7E8213F32111251500E06F63 /* TOCropToolbar.m in Sources */,
 				7E8213F12111251500E06F63 /* TOCropView.m in Sources */,
 				7E23DF612112787F00ECB907 /* TextView+CenterText.swift in Sources */,
+				7EF78AF12112BC3200E62C31 /* TwoSectionsContainerViewController.swift in Sources */,
 				7E8213ED2111251500E06F63 /* TOCroppedImageAttributes.m in Sources */,
 				7E8213F52111251500E06F63 /* CropViewController.swift in Sources */,
 				7E8213F42111251500E06F63 /* UIImage+CropRotate.m in Sources */,
@@ -557,9 +575,11 @@
 				7EDF03412107B9FF00DFEEE3 /* AppDelegate.swift in Sources */,
 				7EF008332108EF1C00A93804 /* FolderController.swift in Sources */,
 				7E0A31AE210BD0870013DCDE /* FolderCollectionViewCell.swift in Sources */,
+				7EF78AEF2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift in Sources */,
 				7E4568BE21113C9200F3B1C6 /* CardListCollectionViewCell.swift in Sources */,
 				7E8213F02111251500E06F63 /* TOCropScrollView.m in Sources */,
 				7E8213EC2111251500E06F63 /* TOCropViewControllerTransitioning.m in Sources */,
+				7EF78AEC2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

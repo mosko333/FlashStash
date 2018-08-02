@@ -34,9 +34,9 @@ class CreateCardViewController: UIViewController {
     var cardSide: CardSide = .front
     
     // Outlets for main controls
+    @IBOutlet weak var cardOutlineView: UIView!
     @IBOutlet weak var sideOfCardLabel: UILabel!
     @IBOutlet weak var cardBodyImageView: UIImageView!
-    @IBOutlet weak var cardBackgroundView: UIView!
     @IBOutlet weak var flipBtn: UIButton!
     @IBOutlet weak var doneBtn: UIButton!
     
@@ -45,19 +45,28 @@ class CreateCardViewController: UIViewController {
     
     // Outlets for OneSetionShow
     @IBOutlet weak var oneSectionShowContainerView: UIView!
+    @IBOutlet weak var questionImageView: UIImageView!
+    @IBOutlet weak var questionTextView: UITextView!
     
     // Outlet for TwoSections
     @IBOutlet weak var twoSectionsContainerView: UIView!
+    @IBOutlet weak var topImageView: UIImageView!
+    @IBOutlet weak var topTextView: UITextView!
+    @IBOutlet weak var bottomImageView: UIImageView!
+    @IBOutlet weak var bottomTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         setupView()
     }
     
     func setupView() {
-        cardBackgroundView.layer.borderColor = #colorLiteral(red: 0.3882352941, green: 0.831372549, blue: 0.4431372549, alpha: 1)
-        cardBackgroundView.layer.borderWidth = 4
-        cardBackgroundView.layer.cornerRadius = 10
+        cardOutlineView.layer.borderColor = #colorLiteral(red: 0.3882352941, green: 0.831372549, blue: 0.4431372549, alpha: 1)
+        cardOutlineView.layer.borderWidth = 4
+        cardOutlineView.layer.cornerRadius = 10
         setupBtn()
     }
     
@@ -81,6 +90,17 @@ class CreateCardViewController: UIViewController {
     }
     @IBAction func addFieldBtnTapped(_ sender: UIButton) {
     }
+    @IBAction func addTopImageBtnTapped(_ sender: UIButton) {
+    }
+    @IBAction func addTopTextViewBtnTapped(_ sender: UIButton) {
+    }
+    @IBAction func addBottomImageBtnTapped(_ sender: UIButton) {
+    }
+    @IBAction func addBottomTextViewBtnTapped(_ sender: UIButton) {
+    }
+    @IBAction func deleteBottomSection(_ sender: UIButton) {
+    }
+    
     
     /*
     // MARK: - Navigation
