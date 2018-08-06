@@ -35,7 +35,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pIN-CA-zT4">
                                 <rect key="frame" x="0.0" y="24" width="414" height="648"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="24" minimumInteritemSpacing="24" id="uBc-Lb-JJe">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Csu-S1-ZoL">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -360,7 +360,7 @@
                                         </connections>
                                     </containerView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="82m-0O-Igj" firstAttribute="leading" secondItem="7dy-fm-RGg" secondAttribute="leading" id="0eB-To-hml"/>
                                     <constraint firstAttribute="trailing" secondItem="xjg-o9-hlJ" secondAttribute="trailing" id="2HX-3g-YFo"/>
@@ -423,27 +423,19 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-X2-URp" userLabel="CardOutline">
-                                <rect key="frame" x="36" y="66" width="340.66666666666669" height="457"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7dy-fm-RGg" firstAttribute="top" secondItem="plF-LA-rIq" secondAttribute="top" constant="46" id="01T-9I-Yte"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="width" secondItem="Y1Z-mU-Yrf" secondAttribute="width" multiplier="0.9" id="3Cc-3h-9Gl"/>
-                            <constraint firstItem="8EL-X2-URp" firstAttribute="centerY" secondItem="7dy-fm-RGg" secondAttribute="centerY" id="AJH-6z-hTR"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="top" secondItem="nTS-RE-7TA" secondAttribute="top" constant="20" id="Gmg-QL-51D"/>
-                            <constraint firstItem="8EL-X2-URp" firstAttribute="width" secondItem="7dy-fm-RGg" secondAttribute="width" id="I3A-Ne-ESP"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="centerX" secondItem="Y1Z-mU-Yrf" secondAttribute="centerX" id="KI7-IL-h0M"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="bottom" secondItem="7dy-fm-RGg" secondAttribute="bottom" constant="21" id="SEz-6J-NXq"/>
-                            <constraint firstItem="8EL-X2-URp" firstAttribute="centerX" secondItem="7dy-fm-RGg" secondAttribute="centerX" id="Wnt-91-Jeg"/>
                             <constraint firstItem="vuU-gR-bPL" firstAttribute="top" secondItem="plF-LA-rIq" secondAttribute="bottom" constant="28" id="axe-DW-bnG"/>
                             <constraint firstItem="vuU-gR-bPL" firstAttribute="width" secondItem="7dy-fm-RGg" secondAttribute="width" multiplier="0.9" id="fyE-hY-gbJ"/>
                             <constraint firstItem="7dy-fm-RGg" firstAttribute="leading" secondItem="plF-LA-rIq" secondAttribute="leading" constant="16" id="jEy-B2-D7Y"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="trailing" secondItem="7dy-fm-RGg" secondAttribute="trailing" constant="16" id="oU7-HV-qtX"/>
                             <constraint firstItem="hTe-1V-DWJ" firstAttribute="centerX" secondItem="Y1Z-mU-Yrf" secondAttribute="centerX" id="q0f-2i-pET"/>
-                            <constraint firstItem="8EL-X2-URp" firstAttribute="height" secondItem="7dy-fm-RGg" secondAttribute="height" id="uHO-Xy-v17"/>
                             <constraint firstItem="vuU-gR-bPL" firstAttribute="centerX" secondItem="Y1Z-mU-Yrf" secondAttribute="centerX" id="vSH-Ff-Jqk"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="top" secondItem="hTe-1V-DWJ" secondAttribute="top" constant="-7" id="xcp-Rn-bWL"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="height" secondItem="Y1Z-mU-Yrf" secondAttribute="height" multiplier="0.78" id="xe7-b9-bia"/>
@@ -452,7 +444,7 @@
                     </view>
                     <connections>
                         <outlet property="cardBodyImageView" destination="plF-LA-rIq" id="yS0-B5-GUW"/>
-                        <outlet property="cardOutlineView" destination="8EL-X2-URp" id="OFe-tK-blU"/>
+                        <outlet property="createCardBackgroundView" destination="7dy-fm-RGg" id="uEw-Vm-Rmx"/>
                         <outlet property="doneBtn" destination="VMI-2P-Ml5" id="5pM-YT-6AB"/>
                         <outlet property="flipBtn" destination="sS3-gv-P5P" id="nEN-kv-imG"/>
                         <outlet property="oneSectionAddContainerView" destination="ZJY-a6-L1a" id="71K-fE-Uay"/>
@@ -624,7 +616,7 @@
                                 </constraints>
                                 <state key="normal" image="xcaAddFieldToCard"/>
                                 <connections>
-                                    <action selector="addFieldBtnTapped:" destination="1xk-Sf-cXz" eventType="touchUpInside" id="llA-5B-bBm"/>
+                                    <action selector="addFieldBtnTapped:" destination="7Hv-XS-8RD" eventType="touchUpInside" id="hyb-Kd-02O"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -644,8 +636,8 @@
                         <viewLayoutGuide key="safeArea" id="IrU-aH-4Ry"/>
                     </view>
                     <connections>
-                        <outlet property="questionImageView" destination="qET-2z-SRh" id="2O5-9D-9XC"/>
-                        <outlet property="questionTextView" destination="4hu-pc-b36" id="AnX-yr-Jd7"/>
+                        <outlet property="questionImageView" destination="qET-2z-SRh" id="SR7-0r-Ld1"/>
+                        <outlet property="questionTextView" destination="4hu-pc-b36" id="PJa-NM-UNh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWL-Oc-94a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -670,7 +662,7 @@
                                         </constraints>
                                         <state key="normal" image="xcaAddPhoto"/>
                                         <connections>
-                                            <action selector="addTopImageBtnTapped:" destination="FJD-xM-5Bq" eventType="touchUpInside" id="4x0-TW-HgL"/>
+                                            <action selector="addTopImageBtnTapped:" destination="FJD-xM-5Bq" eventType="touchUpInside" id="V5B-uD-BQc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgr-cK-QKW" userLabel="Add Text">
@@ -680,7 +672,7 @@
                                         </constraints>
                                         <state key="normal" image="xcaAddText"/>
                                         <connections>
-                                            <action selector="addTopTextViewBtnTapped:" destination="FJD-xM-5Bq" eventType="touchUpInside" id="eTS-sC-Soa"/>
+                                            <action selector="addTopTextViewBtnTapped:" destination="FJD-xM-5Bq" eventType="touchUpInside" id="jjs-zG-yfI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -730,7 +722,7 @@
                                                 </constraints>
                                                 <state key="normal" image="xcaAddPhoto"/>
                                                 <connections>
-                                                    <action selector="addBottomImageBtnTapped:" destination="4wM-MW-0NQ" eventType="touchUpInside" id="AI4-4Z-ywp"/>
+                                                    <action selector="addBottomImageBtnTapped:" destination="4wM-MW-0NQ" eventType="touchUpInside" id="Y8m-Bo-8ar"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXS-a0-xuc" userLabel="Add Text Bottom">
@@ -740,12 +732,12 @@
                                                 </constraints>
                                                 <state key="normal" image="xcaAddText"/>
                                                 <connections>
-                                                    <action selector="addBottomTextViewBtnTapped:" destination="4wM-MW-0NQ" eventType="touchUpInside" id="ISr-My-TVP"/>
+                                                    <action selector="addBottomTextViewBtnTapped:" destination="4wM-MW-0NQ" eventType="touchUpInside" id="rTu-xN-cDJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rk-Ei-ItZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rk-Ei-ItZ" userLabel="deleteBottomField">
                                         <rect key="frame" x="242" y="14" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6y6-R3-X8W"/>
@@ -753,7 +745,7 @@
                                         </constraints>
                                         <state key="normal" image="xcaDeleteCardField"/>
                                         <connections>
-                                            <action selector="deleteBottomSection:" destination="4wM-MW-0NQ" eventType="touchUpInside" id="crU-tD-UjC"/>
+                                            <action selector="deleteBottomSection:" destination="4wM-MW-0NQ" eventType="touchUpInside" id="spU-6x-7cQ"/>
                                         </connections>
                                     </button>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rho-Eu-zag" userLabel="Bottom Image View">
@@ -803,10 +795,10 @@
                         <viewLayoutGuide key="safeArea" id="cgQ-Mq-DbR"/>
                     </view>
                     <connections>
-                        <outlet property="bottomImageView" destination="Rho-Eu-zag" id="PWY-5Q-pFj"/>
-                        <outlet property="bottomTextView" destination="cGN-2e-CWc" id="gPp-n4-aJW"/>
-                        <outlet property="topImageView" destination="BD4-PC-NMV" id="LDn-Kh-F8F"/>
-                        <outlet property="topTextView" destination="686-XD-bz7" id="18V-gi-G4b"/>
+                        <outlet property="bottomImageView" destination="Rho-Eu-zag" id="dGr-cX-tg9"/>
+                        <outlet property="bottomTextView" destination="cGN-2e-CWc" id="7xp-a5-O00"/>
+                        <outlet property="topImageView" destination="BD4-PC-NMV" id="w6e-jK-af6"/>
+                        <outlet property="topTextView" destination="686-XD-bz7" id="0cd-fx-hLK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JS-Qc-eg1" userLabel="First Responder" sceneMemberID="firstResponder"/>

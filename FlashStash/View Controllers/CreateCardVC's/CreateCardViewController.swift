@@ -34,39 +34,28 @@ class CreateCardViewController: UIViewController {
     var cardSide: CardSide = .front
     
     // Outlets for main controls
-    @IBOutlet weak var cardOutlineView: UIView!
+    @IBOutlet weak var createCardBackgroundView: UIView!
     @IBOutlet weak var sideOfCardLabel: UILabel!
     @IBOutlet weak var cardBodyImageView: UIImageView!
     @IBOutlet weak var flipBtn: UIButton!
     @IBOutlet weak var doneBtn: UIButton!
     
-    // Outlets for OneSectionAdd
+    // Outlets for ContainerViews
     @IBOutlet weak var oneSectionAddContainerView: UIView!
-    
-    // Outlets for OneSetionShow
     @IBOutlet weak var oneSectionShowContainerView: UIView!
-    @IBOutlet weak var questionImageView: UIImageView!
-    @IBOutlet weak var questionTextView: UITextView!
-    
-    // Outlet for TwoSections
     @IBOutlet weak var twoSectionsContainerView: UIView!
-    @IBOutlet weak var topImageView: UIImageView!
-    @IBOutlet weak var topTextView: UITextView!
-    @IBOutlet weak var bottomImageView: UIImageView!
-    @IBOutlet weak var bottomTextView: UITextView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
         setupView()
+        setupNotificationObservers()
     }
     
     func setupView() {
-        cardOutlineView.layer.borderColor = #colorLiteral(red: 0.3882352941, green: 0.831372549, blue: 0.4431372549, alpha: 1)
-        cardOutlineView.layer.borderWidth = 4
-        cardOutlineView.layer.cornerRadius = 10
+        createCardBackgroundView.layer.borderColor = #colorLiteral(red: 0.3882352941, green: 0.831372549, blue: 0.4431372549, alpha: 1)
+        createCardBackgroundView.layer.borderWidth = 4
+        createCardBackgroundView.layer.cornerRadius = 10
         setupBtn()
     }
     
@@ -83,23 +72,45 @@ class CreateCardViewController: UIViewController {
             doneBtn.isEnabled = true
         }
     }
+    
+    // ContainerView funcs for creating cards
+    func setupNotificationObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(topImageBtnTapped), name: .topImageBtnTapped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(topTextBtnTapped), name: .topTextBtnTapped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addFieldBtnTapped), name: .addFieldBtnTapped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(bottomImageBtnTapped), name: .bottomImageBtnTapped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(bottomTextBtnTapped), name: .bottomTextBtnTapped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteBottomSection), name: .deleteBottomSection, object: nil)
+    }
+    
+    @objc func topImageBtnTapped() {
+        oneSectionShowContainerView.isHidden = false
+//        oneSectionShowContainerView
+        oneSectionAddContainerView.isHidden = true
+    }
+    @objc func topTextBtnTapped() {
+        oneSectionShowContainerView.isHidden = false
+        oneSectionAddContainerView.isHidden = true
+    }
+    @objc func addFieldBtnTapped() {
+        twoSectionsContainerView.isHidden = false
+        oneSectionShowContainerView.isHidden = true
+    }
+    @objc func bottomImageBtnTapped() {
+    }
+    @objc func bottomTextBtnTapped() {
+    }
+    @objc func deleteBottomSection() {
+    }
+    
 
     @IBAction func flipBtnTapped(_ sender: UIButton) {
     }
     @IBAction func doneBtnTapped(_ sender: UIButton) {
     }
-    @IBAction func addFieldBtnTapped(_ sender: UIButton) {
-    }
-    @IBAction func addTopImageBtnTapped(_ sender: UIButton) {
-    }
-    @IBAction func addTopTextViewBtnTapped(_ sender: UIButton) {
-    }
-    @IBAction func addBottomImageBtnTapped(_ sender: UIButton) {
-    }
-    @IBAction func addBottomTextViewBtnTapped(_ sender: UIButton) {
-    }
-    @IBAction func deleteBottomSection(_ sender: UIButton) {
-    }
+
+
+
     
     
     /*

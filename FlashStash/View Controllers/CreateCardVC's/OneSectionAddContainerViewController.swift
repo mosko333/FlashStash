@@ -21,7 +21,12 @@ class OneSectionAddContainerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func addTopImageBtnTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .topImageBtnTapped, object: nil)
+    }
+    @IBAction func addTopTextViewBtnTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .topTextBtnTapped, object: nil)
+    }
     /*
     // MARK: - Navigation
 

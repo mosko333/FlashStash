@@ -57,6 +57,7 @@
 		7EF78AEC2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AEB2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift */; };
 		7EF78AEF2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AEE2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift */; };
 		7EF78AF12112BC3200E62C31 /* TwoSectionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AF02112BC3200E62C31 /* TwoSectionsContainerViewController.swift */; };
+		7EF78AF321139BF100E62C31 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AF221139BF100E62C31 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		7EF78AEB2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSectionAddContainerViewController.swift; sourceTree = "<group>"; };
 		7EF78AEE2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSectionShowContainerViewController.swift; sourceTree = "<group>"; };
 		7EF78AF02112BC3200E62C31 /* TwoSectionsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSectionsContainerViewController.swift; sourceTree = "<group>"; };
+		7EF78AF221139BF100E62C31 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				7E23DF602112787F00ECB907 /* TextView+CenterText.swift */,
+				7EF78AF221139BF100E62C31 /* Notification.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				7E8213F12111251500E06F63 /* TOCropView.m in Sources */,
 				7E23DF612112787F00ECB907 /* TextView+CenterText.swift in Sources */,
 				7EF78AF12112BC3200E62C31 /* TwoSectionsContainerViewController.swift in Sources */,
+				7EF78AF321139BF100E62C31 /* Notification.swift in Sources */,
 				7E8213ED2111251500E06F63 /* TOCroppedImageAttributes.m in Sources */,
 				7E8213F52111251500E06F63 /* CropViewController.swift in Sources */,
 				7E8213F42111251500E06F63 /* UIImage+CropRotate.m in Sources */,

@@ -10,9 +10,11 @@ import UIKit
 
 class OneSectionShowContainerViewController: UIViewController {
 
+    @IBOutlet weak var questionImageView: UIImageView!
+    @IBOutlet weak var questionTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +23,10 @@ class OneSectionShowContainerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func addFieldBtnTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .addFieldBtnTapped, object: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

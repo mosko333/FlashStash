@@ -49,16 +49,21 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func setupCollectionView() {
         folderCollectionView.delegate = self
         folderCollectionView.dataSource = self
         
-        let layout = self.folderCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: (self.folderCollectionView.frame.size.width / 2.4) , height: self.folderCollectionView.frame.size.height/5)
-        let marginWidth:CGFloat = self.folderCollectionView.frame.size.width / 500
-        layout.sectionInset = UIEdgeInsets(top: 0, left: marginWidth, bottom: 0, right: marginWidth)
+//        let layout = self.folderCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//        layout.itemSize = CGSize(width: (self.folderCollectionView.frame.size.width / 2.4) , height: self.folderCollectionView.frame.size.height/5)
+//        let marginWidth:CGFloat = self.folderCollectionView.frame.size.width / 50
+//        layout.sectionInset = UIEdgeInsets(top: 0, left: marginWidth, bottom: 0, right: marginWidth)
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (self.view.frame.width / 2)
+        return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

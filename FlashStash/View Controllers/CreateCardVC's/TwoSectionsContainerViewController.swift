@@ -10,6 +10,13 @@ import UIKit
 
 class TwoSectionsContainerViewController: UIViewController {
 
+    
+    @IBOutlet weak var topImageView: UIImageView!
+    @IBOutlet weak var topTextView: UITextView!
+    @IBOutlet weak var bottomImageView: UIImageView!
+    @IBOutlet weak var bottomTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +28,15 @@ class TwoSectionsContainerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func addBottomImageBtnTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .bottomImageBtnTapped, object: nil)
+    }
+    @IBAction func addBottomTextViewBtnTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .bottomTextBtnTapped, object: nil)
+    }
+    @IBAction func deleteBottomSection(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .deleteBottomSection, object: nil)
+    }
     /*
     // MARK: - Navigation
 
