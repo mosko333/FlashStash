@@ -41,7 +41,6 @@ class CreateCardViewController: UIViewController {
     @IBOutlet weak var doneBtn: UIButton!
     
     // Outlets for ContainerViews
-    @IBOutlet weak var oneSectionAddContainerView: UIView!
     @IBOutlet weak var oneSectionShowContainerView: UIView!
     @IBOutlet weak var twoSectionsContainerView: UIView!
 
@@ -58,6 +57,8 @@ class CreateCardViewController: UIViewController {
         createCardBackgroundView.layer.cornerRadius = 10
         setupBtn()
     }
+    
+    
     
     func setupBtn() {
         if card == nil {
@@ -77,30 +78,29 @@ class CreateCardViewController: UIViewController {
     func setupNotificationObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(topImageBtnTapped), name: .topImageBtnTapped, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(topTextBtnTapped), name: .topTextBtnTapped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteTopSectionBtnTapped), name: .deleteTopSectionBtnTapped, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(addFieldBtnTapped), name: .addFieldBtnTapped, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(bottomImageBtnTapped), name: .bottomImageBtnTapped, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(bottomTextBtnTapped), name: .bottomTextBtnTapped, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(deleteBottomSection), name: .deleteBottomSection, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteBottomSectionBtnTapped), name: .deleteBottomSectionBtnTapped, object: nil)
     }
     
     @objc func topImageBtnTapped() {
-        oneSectionShowContainerView.isHidden = false
-//        oneSectionShowContainerView
-        oneSectionAddContainerView.isHidden = true
     }
     @objc func topTextBtnTapped() {
-        oneSectionShowContainerView.isHidden = false
-        oneSectionAddContainerView.isHidden = true
     }
     @objc func addFieldBtnTapped() {
         twoSectionsContainerView.isHidden = false
         oneSectionShowContainerView.isHidden = true
     }
+    @objc func deleteTopSectionBtnTapped() {
+        
+    }
     @objc func bottomImageBtnTapped() {
     }
     @objc func bottomTextBtnTapped() {
     }
-    @objc func deleteBottomSection() {
+    @objc func deleteBottomSectionBtnTapped() {
     }
     
 

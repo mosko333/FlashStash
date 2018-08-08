@@ -1,0 +1,6 @@
+framework module Pods_FlashStashUITests {
+  umbrella header "Pods-FlashStashUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

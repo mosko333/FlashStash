@@ -35,7 +35,7 @@ class TwoSectionsContainerViewController: UIViewController {
         NotificationCenter.default.post(name: .bottomTextBtnTapped, object: nil)
     }
     @IBAction func deleteBottomSection(_ sender: UIButton) {
-        NotificationCenter.default.post(name: .deleteBottomSection, object: nil)
+        NotificationCenter.default.post(name: .deleteBottomSectionBtnTapped, object: nil)
     }
     /*
     // MARK: - Navigation

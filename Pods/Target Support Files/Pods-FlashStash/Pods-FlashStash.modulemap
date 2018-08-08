@@ -1,0 +1,6 @@
+framework module Pods_FlashStash {
+  umbrella header "Pods-FlashStash-umbrella.h"
+
+  export *
+  module * { export * }
+}

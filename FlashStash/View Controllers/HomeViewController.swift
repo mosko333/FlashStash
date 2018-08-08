@@ -53,17 +53,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func setupCollectionView() {
         folderCollectionView.delegate = self
         folderCollectionView.dataSource = self
-        
-//        let layout = self.folderCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.itemSize = CGSize(width: (self.folderCollectionView.frame.size.width / 2.4) , height: self.folderCollectionView.frame.size.height/5)
-//        let marginWidth:CGFloat = self.folderCollectionView.frame.size.width / 50
-//        layout.sectionInset = UIEdgeInsets(top: 0, left: marginWidth, bottom: 0, right: marginWidth)
-
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (self.view.frame.width / 2)
-        return CGSize(width: width, height: width)
+        let width = (view.frame.width - 3 * 24) / 2
+        return CGSize(width: width, height: width * 0.8)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7279FB8F7B4EEFDFFC8FDC2A /* Pods_FlashStash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD692BF82698897E370846C5 /* Pods_FlashStash.framework */; };
 		7E0A31AE210BD0870013DCDE /* FolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */; };
 		7E0A31B6210BD0FA0013DCDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */; };
 		7E23DF5F211225E400ECB907 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */; };
@@ -54,10 +55,10 @@
 		7EF008312108DDB500A93804 /* TestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF008302108DDB500A93804 /* TestFile.swift */; };
 		7EF008332108EF1C00A93804 /* FolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF008322108EF1C00A93804 /* FolderController.swift */; };
 		7EF008352108F21F00A93804 /* DeckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF008342108F21F00A93804 /* DeckController.swift */; };
-		7EF78AEC2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AEB2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift */; };
 		7EF78AEF2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AEE2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift */; };
 		7EF78AF12112BC3200E62C31 /* TwoSectionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AF02112BC3200E62C31 /* TwoSectionsContainerViewController.swift */; };
 		7EF78AF321139BF100E62C31 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF78AF221139BF100E62C31 /* Notification.swift */; };
+		A39A2C26ABF13E3CBBF4315D /* Pods_FlashStashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0F027FA48B839BDC2D91A6 /* Pods_FlashStashUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B613EF2651E3A27DE7ABE28 /* Pods-FlashStashUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashStashUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashStashUITests/Pods-FlashStashUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5A7BB8573939098AD5EE4EFB /* Pods-FlashStash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashStash.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashStash/Pods-FlashStash.release.xcconfig"; sourceTree = "<group>"; };
 		7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardViewController.swift; sourceTree = "<group>"; };
@@ -153,10 +156,13 @@
 		7EF008302108DDB500A93804 /* TestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFile.swift; sourceTree = "<group>"; };
 		7EF008322108EF1C00A93804 /* FolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderController.swift; sourceTree = "<group>"; };
 		7EF008342108F21F00A93804 /* DeckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckController.swift; sourceTree = "<group>"; };
-		7EF78AEB2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSectionAddContainerViewController.swift; sourceTree = "<group>"; };
 		7EF78AEE2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSectionShowContainerViewController.swift; sourceTree = "<group>"; };
 		7EF78AF02112BC3200E62C31 /* TwoSectionsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSectionsContainerViewController.swift; sourceTree = "<group>"; };
 		7EF78AF221139BF100E62C31 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		A7EA2E2B82AC53A048413762 /* Pods-FlashStashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashStashUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashStashUITests/Pods-FlashStashUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A91E3D2BF70D148018530D61 /* Pods-FlashStash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashStash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashStash/Pods-FlashStash.debug.xcconfig"; sourceTree = "<group>"; };
+		CD692BF82698897E370846C5 /* Pods_FlashStash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashStash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB0F027FA48B839BDC2D91A6 /* Pods_FlashStashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashStashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7279FB8F7B4EEFDFFC8FDC2A /* Pods_FlashStash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39A2C26ABF13E3CBBF4315D /* Pods_FlashStashUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +313,8 @@
 				7EDF033F2107B9FF00DFEEE3 /* FlashStash */,
 				7EDF03572107BA0100DFEEE3 /* FlashStashUITests */,
 				7EDF033E2107B9FF00DFEEE3 /* Products */,
+				E5750F3C7BF47A8D4C6B1211 /* Pods */,
+				ADBE240C834D48B41B0F0E5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -411,11 +421,30 @@
 			isa = PBXGroup;
 			children = (
 				7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */,
-				7EF78AEB2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift */,
 				7EF78AEE2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift */,
 				7EF78AF02112BC3200E62C31 /* TwoSectionsContainerViewController.swift */,
 			);
 			path = "CreateCardVC's";
+			sourceTree = "<group>";
+		};
+		ADBE240C834D48B41B0F0E5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD692BF82698897E370846C5 /* Pods_FlashStash.framework */,
+				DB0F027FA48B839BDC2D91A6 /* Pods_FlashStashUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5750F3C7BF47A8D4C6B1211 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A91E3D2BF70D148018530D61 /* Pods-FlashStash.debug.xcconfig */,
+				5A7BB8573939098AD5EE4EFB /* Pods-FlashStash.release.xcconfig */,
+				A7EA2E2B82AC53A048413762 /* Pods-FlashStashUITests.debug.xcconfig */,
+				3B613EF2651E3A27DE7ABE28 /* Pods-FlashStashUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,9 +454,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EDF035D2107BA0100DFEEE3 /* Build configuration list for PBXNativeTarget "FlashStash" */;
 			buildPhases = (
+				92667816F842FEB6280B6B9D /* [CP] Check Pods Manifest.lock */,
 				7EDF03392107B9FF00DFEEE3 /* Sources */,
 				7EDF033A2107B9FF00DFEEE3 /* Frameworks */,
 				7EDF033B2107B9FF00DFEEE3 /* Resources */,
+				1BB7F2AC07AFF81C62CCDA61 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -442,6 +473,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EDF03602107BA0100DFEEE3 /* Build configuration list for PBXNativeTarget "FlashStashUITests" */;
 			buildPhases = (
+				3AEB84B237A6E8883DBABB92 /* [CP] Check Pods Manifest.lock */,
 				7EDF03502107BA0100DFEEE3 /* Sources */,
 				7EDF03512107BA0100DFEEE3 /* Frameworks */,
 				7EDF03522107BA0100DFEEE3 /* Resources */,
@@ -546,6 +578,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1BB7F2AC07AFF81C62CCDA61 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlashStash/Pods-FlashStash-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashStash/Pods-FlashStash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AEB84B237A6E8883DBABB92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashStashUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92667816F842FEB6280B6B9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashStash-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7EDF03392107B9FF00DFEEE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -583,7 +672,6 @@
 				7E4568BE21113C9200F3B1C6 /* CardListCollectionViewCell.swift in Sources */,
 				7E8213F02111251500E06F63 /* TOCropScrollView.m in Sources */,
 				7E8213EC2111251500E06F63 /* TOCropViewControllerTransitioning.m in Sources */,
-				7EF78AEC2112BBCB00E62C31 /* OneSectionAddContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +744,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -717,6 +806,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -770,6 +860,7 @@
 		};
 		7EDF035E2107BA0100DFEEE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A91E3D2BF70D148018530D61 /* Pods-FlashStash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -789,6 +880,7 @@
 		};
 		7EDF035F2107BA0100DFEEE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A7BB8573939098AD5EE4EFB /* Pods-FlashStash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -808,6 +900,7 @@
 		};
 		7EDF03612107BA0100DFEEE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7EA2E2B82AC53A048413762 /* Pods-FlashStashUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -828,6 +921,7 @@
 		};
 		7EDF03622107BA0100DFEEE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B613EF2651E3A27DE7ABE28 /* Pods-FlashStashUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

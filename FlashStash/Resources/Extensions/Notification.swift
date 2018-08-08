@@ -11,8 +11,9 @@ import Foundation
 extension Notification.Name {
     static let topImageBtnTapped = Notification.Name("topImageBtnTapped")
     static let topTextBtnTapped = Notification.Name("topTextBtnTapped")
+    static let deleteTopSectionBtnTapped = Notification.Name("deleteTopSectionBtnTapped")
     static let addFieldBtnTapped = Notification.Name("addFieldBtnTapped")
     static let bottomImageBtnTapped = Notification.Name("bottomImageBtnTapped")
     static let bottomTextBtnTapped = Notification.Name("bottomTextBtnTapped")
-    static let deleteBottomSection = Notification.Name("deleteBottomSection")
+    static let deleteBottomSectionBtnTapped = Notification.Name("deleteBottomSectionBtnTapped")
 }
