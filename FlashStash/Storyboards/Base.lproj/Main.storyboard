@@ -588,10 +588,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wa9-gR-INz">
-                                <rect key="frame" x="51" y="195" width="238" height="67"/>
+                                <rect key="frame" x="51" y="189.33333333333334" width="238" height="78.333333333333343"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgl-vy-mD7" userLabel="Add Photo">
-                                        <rect key="frame" x="0.0" y="0.0" width="85" height="67"/>
+                                        <rect key="frame" x="0.0" y="5.6666666666666572" width="85" height="67"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bgl-vy-mD7" secondAttribute="height" multiplier="85:67" id="SsN-ws-aKd"/>
                                         </constraints>
@@ -601,7 +601,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acD-vs-b5a" userLabel="Add Text">
-                                        <rect key="frame" x="165" y="0.0" width="73" height="67"/>
+                                        <rect key="frame" x="153" y="0.0" width="85" height="78.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="acD-vs-b5a" secondAttribute="height" multiplier="73:67" id="lXU-vI-dh9"/>
                                         </constraints>
@@ -612,11 +612,12 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="randomImage" translatesAutoresizingMaskIntoConstraints="NO" id="qET-2z-SRh" userLabel="Question Image Whole">
-                                <rect key="frame" x="4" y="4" width="332.66666666666669" height="449"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qET-2z-SRh" userLabel="CardImage">
+                                <rect key="frame" x="8" y="8" width="324" height="441"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4hu-pc-b36">
-                                <rect key="frame" x="4" y="4" width="332" height="449"/>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4hu-pc-b36" userLabel="CardTextView">
+                                <rect key="frame" x="8" y="8" width="324" height="441"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
@@ -645,31 +646,39 @@
                                     <action selector="deleteFieldBtnTapped:" destination="7Hv-XS-8RD" eventType="touchUpInside" id="JP2-tX-0ng"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nik-AP-F3c" userLabel="ReAdd">
+                                <rect key="frame" x="127.66666666666669" y="189" width="85" height="78.333333333333314"/>
+                                <state key="normal" image="xcaAddPhoto"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="4hu-pc-b36" secondAttribute="trailing" constant="4" id="1TB-aj-tfp"/>
+                            <constraint firstItem="IrU-aH-4Ry" firstAttribute="bottom" secondItem="4hu-pc-b36" secondAttribute="bottom" constant="8" id="4yi-MP-AXQ"/>
+                            <constraint firstItem="4hu-pc-b36" firstAttribute="leading" secondItem="IrU-aH-4Ry" secondAttribute="leading" constant="8" id="5TI-tW-nkM"/>
                             <constraint firstItem="Wa9-gR-INz" firstAttribute="width" secondItem="wpz-i7-kcl" secondAttribute="width" multiplier="0.7" id="5vx-n0-nF0"/>
+                            <constraint firstItem="qET-2z-SRh" firstAttribute="top" secondItem="IrU-aH-4Ry" secondAttribute="top" constant="8" id="7QQ-2L-TtM"/>
+                            <constraint firstItem="Nik-AP-F3c" firstAttribute="centerY" secondItem="wpz-i7-kcl" secondAttribute="centerY" id="7T2-tu-dta"/>
                             <constraint firstItem="Wa9-gR-INz" firstAttribute="centerY" secondItem="wpz-i7-kcl" secondAttribute="centerY" id="8Cn-Y3-z15"/>
-                            <constraint firstItem="qET-2z-SRh" firstAttribute="top" secondItem="wpz-i7-kcl" secondAttribute="top" constant="4" id="HK5-kW-OHm"/>
-                            <constraint firstAttribute="bottom" secondItem="qET-2z-SRh" secondAttribute="bottom" constant="4" id="Isn-CM-r5b"/>
-                            <constraint firstAttribute="bottom" secondItem="4hu-pc-b36" secondAttribute="bottom" constant="4" id="ItV-QG-ibu"/>
+                            <constraint firstItem="qET-2z-SRh" firstAttribute="leading" secondItem="IrU-aH-4Ry" secondAttribute="leading" constant="8" id="Jty-9L-Ggd"/>
                             <constraint firstItem="IrU-aH-4Ry" firstAttribute="trailing" secondItem="5Lk-aS-S58" secondAttribute="trailing" constant="16" id="Pij-8a-jlU"/>
-                            <constraint firstItem="qET-2z-SRh" firstAttribute="leading" secondItem="wpz-i7-kcl" secondAttribute="leading" constant="4" id="QaV-FZ-1gr"/>
-                            <constraint firstAttribute="trailing" secondItem="qET-2z-SRh" secondAttribute="trailing" constant="4" id="SZE-Zb-jaa"/>
-                            <constraint firstItem="4hu-pc-b36" firstAttribute="top" secondItem="wpz-i7-kcl" secondAttribute="top" constant="4" id="VCh-ce-UsG"/>
                             <constraint firstItem="5Lk-aS-S58" firstAttribute="top" secondItem="IrU-aH-4Ry" secondAttribute="top" constant="16" id="Vi1-vi-4rp"/>
+                            <constraint firstItem="IrU-aH-4Ry" firstAttribute="trailing" secondItem="4hu-pc-b36" secondAttribute="trailing" constant="8" id="XRs-FX-VCc"/>
+                            <constraint firstItem="IrU-aH-4Ry" firstAttribute="bottom" secondItem="qET-2z-SRh" secondAttribute="bottom" constant="8" id="db4-Kj-SSn"/>
+                            <constraint firstItem="4hu-pc-b36" firstAttribute="top" secondItem="IrU-aH-4Ry" secondAttribute="top" constant="8" id="fDa-oc-Iha"/>
                             <constraint firstItem="Wa9-gR-INz" firstAttribute="centerX" secondItem="wpz-i7-kcl" secondAttribute="centerX" id="gJy-yk-Iay"/>
+                            <constraint firstItem="IrU-aH-4Ry" firstAttribute="trailing" secondItem="qET-2z-SRh" secondAttribute="trailing" constant="8" id="ht3-qI-E5G"/>
+                            <constraint firstItem="Nik-AP-F3c" firstAttribute="centerX" secondItem="wpz-i7-kcl" secondAttribute="centerX" id="i2F-XK-hjW"/>
                             <constraint firstItem="Exi-Mw-j7U" firstAttribute="trailing" secondItem="wpz-i7-kcl" secondAttribute="trailing" constant="-16" id="k5w-ZU-dwA"/>
-                            <constraint firstItem="4hu-pc-b36" firstAttribute="leading" secondItem="wpz-i7-kcl" secondAttribute="leading" constant="4" id="px4-Zg-NaK"/>
+                            <constraint firstItem="Nik-AP-F3c" firstAttribute="width" secondItem="acD-vs-b5a" secondAttribute="width" id="kM1-hQ-9rt"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Exi-Mw-j7U" secondAttribute="bottom" constant="16" id="ste-JB-5Df"/>
+                            <constraint firstItem="Nik-AP-F3c" firstAttribute="height" secondItem="acD-vs-b5a" secondAttribute="height" id="xIg-R2-skB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IrU-aH-4Ry"/>
                     </view>
                     <connections>
+                        <outlet property="cardImageView" destination="qET-2z-SRh" id="LFK-zD-8fh"/>
+                        <outlet property="cardTextView" destination="4hu-pc-b36" id="A0d-vf-lwF"/>
                         <outlet property="deleteFieldUIButton" destination="5Lk-aS-S58" id="REg-cx-FPh"/>
-                        <outlet property="questionImageView" destination="qET-2z-SRh" id="SR7-0r-Ld1"/>
-                        <outlet property="questionTextView" destination="4hu-pc-b36" id="PJa-NM-UNh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWL-Oc-94a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -792,7 +801,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="randomImage" width="215" height="234"/>
         <image name="xcaAddFieldToCard" width="41" height="41"/>
         <image name="xcaAddPhoto" width="85" height="67"/>
         <image name="xcaAddText" width="73" height="67"/>

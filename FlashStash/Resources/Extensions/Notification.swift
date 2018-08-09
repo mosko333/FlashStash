@@ -15,5 +15,7 @@ extension Notification.Name {
     static let addFieldBtnTapped = Notification.Name("addFieldBtnTapped")
     static let bottomImageBtnTapped = Notification.Name("bottomImageBtnTapped")
     static let bottomTextBtnTapped = Notification.Name("bottomTextBtnTapped")
+    static let cardSideFilled = Notification.Name("cardSideFilled")
     static let deleteBottomSectionBtnTapped = Notification.Name("deleteBottomSectionBtnTapped")
+    static let cardFlipped = Notification.Name("cardFlipped")
 }

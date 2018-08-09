@@ -61,5 +61,9 @@
 		<string>OpenSans-SemiboldItalic.ttf</string>
 		<string>TragicMarker.otf</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>May we use your camera?</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>May we access your photo library?</string>
 </dict>
 </plist>

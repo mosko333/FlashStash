@@ -12,6 +12,8 @@
 		7E0A31B6210BD0FA0013DCDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */; };
 		7E23DF5F211225E400ECB907 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */; };
 		7E23DF612112787F00ECB907 /* TextView+CenterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23DF602112787F00ECB907 /* TextView+CenterText.swift */; };
+		7E30069D211B966800FD2121 /* TempCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E30069C211B966800FD2121 /* TempCard.swift */; };
+		7E30069F211BB18B00FD2121 /* TempCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E30069E211BB18B00FD2121 /* TempCardController.swift */; };
 		7E31E1F821090A740073190B /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E31E1F721090A740073190B /* CardController.swift */; };
 		7E4568BC21113B0D00F3B1C6 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4568BB21113B0D00F3B1C6 /* CardListViewController.swift */; };
 		7E4568BE21113C9200F3B1C6 /* CardListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4568BD21113C9200F3B1C6 /* CardListCollectionViewCell.swift */; };
@@ -42,6 +44,9 @@
 		7E8213F42111251500E06F63 /* UIImage+CropRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8213E32111251500E06F63 /* UIImage+CropRotate.m */; };
 		7E8213F52111251500E06F63 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8213E82111251500E06F63 /* CropViewController.swift */; };
 		7E8213F62111251500E06F63 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E8213E92111251500E06F63 /* Info.plist */; };
+		7EC95A6D211A8CFC004DED4C /* AutoCropCameraScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC95A6C211A8CFC004DED4C /* AutoCropCameraScanner.swift */; };
+		7EC95A70211A8EB3004DED4C /* AutoCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC95A6F211A8EB3004DED4C /* AutoCropViewController.swift */; };
+		7EC95A72211A9186004DED4C /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC95A71211A9186004DED4C /* PhotoPreviewViewController.swift */; };
 		7EDF03412107B9FF00DFEEE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF03402107B9FF00DFEEE3 /* AppDelegate.swift */; };
 		7EDF03462107B9FF00DFEEE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDF03442107B9FF00DFEEE3 /* Main.storyboard */; };
 		7EDF03492107B9FF00DFEEE3 /* FlashStash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF03472107B9FF00DFEEE3 /* FlashStash.xcdatamodeld */; };
@@ -78,6 +83,8 @@
 		7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardViewController.swift; sourceTree = "<group>"; };
 		7E23DF602112787F00ECB907 /* TextView+CenterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextView+CenterText.swift"; sourceTree = "<group>"; };
+		7E30069C211B966800FD2121 /* TempCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempCard.swift; sourceTree = "<group>"; };
+		7E30069E211BB18B00FD2121 /* TempCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempCardController.swift; sourceTree = "<group>"; };
 		7E31E1F721090A740073190B /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		7E4568BB21113B0D00F3B1C6 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		7E4568BD21113C9200F3B1C6 /* CardListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -139,6 +146,9 @@
 		7E8213E82111251500E06F63 /* CropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropViewController.swift; sourceTree = "<group>"; };
 		7E8213E92111251500E06F63 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E8213F72111252000E06F63 /* FlashStash-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlashStash-Bridging-Header.h"; sourceTree = "<group>"; };
+		7EC95A6C211A8CFC004DED4C /* AutoCropCameraScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCropCameraScanner.swift; sourceTree = "<group>"; };
+		7EC95A6F211A8EB3004DED4C /* AutoCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCropViewController.swift; sourceTree = "<group>"; };
+		7EC95A71211A9186004DED4C /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 		7EDF033D2107B9FF00DFEEE3 /* FlashStash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashStash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDF03402107B9FF00DFEEE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EDF03452107B9FF00DFEEE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -194,13 +204,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		7E4568BA21113AD500F3B1C6 /* CropVCs */ = {
+		7E4568BA21113AD500F3B1C6 /* ManualCropVCs */ = {
 			isa = PBXGroup;
 			children = (
 				7E8213E62111251500E06F63 /* CropViewController */,
 				7E8213B62111251500E06F63 /* TOCropViewController */,
 			);
-			path = CropVCs;
+			path = ManualCropVCs;
 			sourceTree = "<group>";
 		};
 		7E5B7CD9210D66D600D515A8 /* Fonts */ = {
@@ -307,6 +317,15 @@
 			path = CropViewController;
 			sourceTree = "<group>";
 		};
+		7EC95A6E211A8E77004DED4C /* AutoCropVCs */ = {
+			isa = PBXGroup;
+			children = (
+				7EC95A6F211A8EB3004DED4C /* AutoCropViewController.swift */,
+				7EC95A71211A9186004DED4C /* PhotoPreviewViewController.swift */,
+			);
+			path = AutoCropVCs;
+			sourceTree = "<group>";
+		};
 		7EDF03342107B9FE00DFEEE3 = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +384,7 @@
 				7E0A31AD210BD0870013DCDE /* FolderCollectionViewCell.swift */,
 				7E5B7D00210D6EE800D515A8 /* DeckTableViewCell.swift */,
 				7E4568BD21113C9200F3B1C6 /* CardListCollectionViewCell.swift */,
+				7EC95A6C211A8CFC004DED4C /* AutoCropCameraScanner.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,8 +392,9 @@
 		7EDF03652107BACA00DFEEE3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7EF78AED2112BBD600E62C31 /* CreateCardVC's */,
-				7E4568BA21113AD500F3B1C6 /* CropVCs */,
+				7EC95A6E211A8E77004DED4C /* AutoCropVCs */,
+				7E4568BA21113AD500F3B1C6 /* ManualCropVCs */,
+				7EF78AED2112BBD600E62C31 /* CreateCardVCs */,
 				7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */,
 				7E5B7D02210D703200D515A8 /* DeckListTableViewController.swift */,
 				7E5B7D04210EA17200D515A8 /* AddDeckViewController.swift */,
@@ -389,6 +410,7 @@
 				7EF008322108EF1C00A93804 /* FolderController.swift */,
 				7EF008342108F21F00A93804 /* DeckController.swift */,
 				7E31E1F721090A740073190B /* CardController.swift */,
+				7E30069E211BB18B00FD2121 /* TempCardController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -413,18 +435,19 @@
 				7EF0082A2107F5B900A93804 /* Deck.swift */,
 				7EF0082C2107F5CF00A93804 /* Folder.swift */,
 				7EF0082E2108DD5600A93804 /* CoreDataStack.swift */,
+				7E30069C211B966800FD2121 /* TempCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		7EF78AED2112BBD600E62C31 /* CreateCardVC's */ = {
+		7EF78AED2112BBD600E62C31 /* CreateCardVCs */ = {
 			isa = PBXGroup;
 			children = (
 				7E23DF5E211225E400ECB907 /* CreateCardViewController.swift */,
 				7EF78AEE2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift */,
 				7EF78AF02112BC3200E62C31 /* TwoSectionsContainerViewController.swift */,
 			);
-			path = "CreateCardVC's";
+			path = CreateCardVCs;
 			sourceTree = "<group>";
 		};
 		ADBE240C834D48B41B0F0E5A /* Frameworks */ = {
@@ -647,6 +670,7 @@
 				7E8213F32111251500E06F63 /* TOCropToolbar.m in Sources */,
 				7E8213F12111251500E06F63 /* TOCropView.m in Sources */,
 				7E23DF612112787F00ECB907 /* TextView+CenterText.swift in Sources */,
+				7EC95A70211A8EB3004DED4C /* AutoCropViewController.swift in Sources */,
 				7EF78AF12112BC3200E62C31 /* TwoSectionsContainerViewController.swift in Sources */,
 				7EF78AF321139BF100E62C31 /* Notification.swift in Sources */,
 				7E8213ED2111251500E06F63 /* TOCroppedImageAttributes.m in Sources */,
@@ -654,15 +678,19 @@
 				7E8213F42111251500E06F63 /* UIImage+CropRotate.m in Sources */,
 				7EF0082D2107F5CF00A93804 /* Folder.swift in Sources */,
 				7E5B7D01210D6EE800D515A8 /* DeckTableViewCell.swift in Sources */,
+				7E30069F211BB18B00FD2121 /* TempCardController.swift in Sources */,
 				7EDF03492107B9FF00DFEEE3 /* FlashStash.xcdatamodeld in Sources */,
 				7EF008312108DDB500A93804 /* TestFile.swift in Sources */,
 				7E0A31B6210BD0FA0013DCDE /* HomeViewController.swift in Sources */,
 				7E8213F22111251500E06F63 /* TOCropOverlayView.m in Sources */,
 				7E8213EE2111251500E06F63 /* TOCropViewController.m in Sources */,
 				7E31E1F821090A740073190B /* CardController.swift in Sources */,
+				7E30069D211B966800FD2121 /* TempCard.swift in Sources */,
+				7EC95A72211A9186004DED4C /* PhotoPreviewViewController.swift in Sources */,
 				7E4568BC21113B0D00F3B1C6 /* CardListViewController.swift in Sources */,
 				7E5B7D03210D703200D515A8 /* DeckListTableViewController.swift in Sources */,
 				7EF0082F2108DD5600A93804 /* CoreDataStack.swift in Sources */,
+				7EC95A6D211A8CFC004DED4C /* AutoCropCameraScanner.swift in Sources */,
 				7EF008292107F53F00A93804 /* Card.swift in Sources */,
 				7E8213EB2111251500E06F63 /* TOActivityCroppedImageProvider.m in Sources */,
 				7EDF03412107B9FF00DFEEE3 /* AppDelegate.swift in Sources */,

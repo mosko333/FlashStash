@@ -46,15 +46,6 @@ class CardListViewController: UIViewController {
     }
     @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }
 
 extension CardListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -63,7 +54,6 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
         cardListCollectionView.dataSource = self
         
         let layout = self.cardListCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        //layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 10)
         layout.itemSize = CGSize(width: (self.cardListCollectionView.frame.size.width / 2) - 20 , height: self.cardListCollectionView.frame.size.height/3)
     }
     
