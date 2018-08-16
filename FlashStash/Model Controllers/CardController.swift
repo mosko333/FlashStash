@@ -18,6 +18,11 @@ class CardController {
         CoreDataStack.save()
     }
     
+    static func createCardWithTempCard(tempCard: TempCard, to deck: Deck) {
+        let _ = Card(deck: deck, tempCard: tempCard)
+        CoreDataStack.save()
+    }
+    
     static func delete(card: Card, fromA deck: Deck) {
         CoreDataStack.context.delete(card)
         CoreDataStack.save()

@@ -17,13 +17,12 @@ class CardListViewController: UIViewController {
     @IBOutlet weak var studyBtnOutlet: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        setupCollectionView()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setupView()
+        setupCollectionView()
     }
     
     func setupView() {
@@ -73,6 +72,13 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreateCard" {
+            if let destinationVC = segue.destination as? CreateCardViewController {
+                destinationVC.deck = deck
+            }
+        }
+    }
     //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     //        folder = FolderController.shared.folders[indexPath.row]
     //        performSegue(withIdentifier: "toDeckList", sender: indexPath)

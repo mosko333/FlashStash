@@ -10,8 +10,8 @@ import UIKit
 
 class OneSectionShowContainerViewController: UIViewController, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    var tempCard: TempCard?
-    var cardSide: CardSide = .front
+//    var tempCard: TempCard?
+//    var cardSide: CardSide = .front
 //    var cardField: CardField {
 //        //let state = cardSide == .front ? CardField.topQuestion : CardField.topAnswer
 //    return state }
@@ -29,11 +29,19 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
         
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        cardTextView.frame.size.height -= 100
+    }
     func textViewDidEndEditing(_ textView: UITextView) {
 
-        //tempCard?.getSide(.front).top.text = cardTextView.text.isEmpty ? nil : cardTextView.text
-        //NotificationCenter.default.post(name: .cardSideFilled, object: tempCard)
+//        tempCard?.getSide(.front).top.text = cardTextView.text.isEmpty ? nil : cardTextView.text
+//        NotificationCenter.default.post(name: .cardSideFilled, object: tempCard)
         
+        if let text = cardTextView.text,
+            !text.isEmpty {
+            NotificationCenter.default.post(name: .cardTopSectionFilled, object: text)
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             UIView.animate(withDuration: 0.5) {
                 self.cardTextView.centerText()

@@ -10,50 +10,57 @@ import Foundation
 
 class TempCardController {
     var side: CardSide
-    let tempCard: TempCard
+    let tempCard = TempCard()
  
-    init(side: CardSide, tempCard: TempCard) {
+    init(side: CardSide) {
         self.side = side
-        self.tempCard = tempCard
     }
     
     func isCardComplete() -> Bool {
         return tempCard.isComplete
     }
     
-    func sideHasImage(side: CardSide) -> Bool {
+    func sideHasImage() -> Bool {
         return tempCard.getSide(side).hasImage
     }
     
-    func sideHasText(side: CardSide) -> Bool {
+    func sideHasText() -> Bool {
         return tempCard.getSide(side).hasText
     }
     
-    func isSideBlank(side: CardSide) -> Bool {
+    func isSideBlank() -> Bool {
         return tempCard.getSide(side).isBlank
     }
     
-    func isContentPositionBlank(side: CardSide, position: CardContentPosistion) -> Bool {
+    func hasTwoSections() -> Bool {
+        return tempCard.getSide(side).hasTwoSections
+    }
+    
+    func isContentPositionBlank(position: CardContentPosistion) -> Bool {
         return tempCard.getSide(side).getPosition(position).isBlank
     }
     
-    func contentPositionIsImage(side: CardSide, position: CardContentPosistion) -> Bool {
+    func contentPositionIsImage(position: CardContentPosistion) -> Bool {
         return tempCard.getSide(side).getPosition(position).isImage
     }
     
-    func contentPositionIsText(side: CardSide, position: CardContentPosistion) -> Bool {
+    func contentPositionIsText(position: CardContentPosistion) -> Bool {
         return tempCard.getSide(side).getPosition(position).isText
     }
     
-    func addMedia(side: CardSide, position: CardContentPosistion, media: Any){
+    func addMedia(position: CardContentPosistion, media: Any){
         tempCard.addMedia(side: side, position: position, media: media)
     }
     
-    func deleteContentPosition(side: CardSide, position: CardContentPosistion) {
+    func deleteContentPosition(position: CardContentPosistion) {
         tempCard.getSide(side).deleteContent(position: position)
     }
     
-    func deleteMedia(side: CardSide, position: CardContentPosistion) {
+    func deleteMedia(position: CardContentPosistion) {
         tempCard.getSide(side).deleteMedia(position: position)
+    }
+    
+    func saveCardIntoCoreData(deck: Deck) {
+        let _ = CardController.createCardWithTempCard(tempCard: tempCard, to: deck)
     }
 }

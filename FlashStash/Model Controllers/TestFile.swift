@@ -9,12 +9,5 @@
 import UIKit
 
 class test {
-//    let testCard = Deck(
-//    func test(){
-//        let card = Card()
-//      let folder = Folder()
-//        folder.addToDecks(<#T##value: Deck##Deck#>)
-//        
-//    }
     
 }

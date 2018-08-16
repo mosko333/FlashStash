@@ -53,7 +53,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="156" height="117"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-3V-X1P">
-                                                    <rect key="frame" x="24" y="56.333333333333336" width="108" height="24.666666666666664"/>
+                                                    <rect key="frame" x="24" y="56.666666666666664" width="108" height="24.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -307,7 +307,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ifR-Jy-OSy">
                             <connections>
                                 <action selector="addBtnTapped:" destination="Aag-rn-YZC" id="HcN-ur-wdC"/>
-                                <segue destination="1xk-Sf-cXz" kind="show" id="Gw1-LR-OTL"/>
+                                <segue destination="1xk-Sf-cXz" kind="show" identifier="toCreateCard" id="Gw1-LR-OTL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -10,25 +10,10 @@ import UIKit
 
 class CreateCardViewController: UIViewController {
     
-    
-//    enum CardFields {
-//        case questionTextTop
-//        case questionTextBottom
-//        case questionTextWhole
-//        case questionImageTop
-//        case questionImageBottom
-//        case questionImageWhole
-//        case answerTextTop
-//        case answerTextBottom
-//        case answerTextWhole
-//        case answerImageTop
-//        case answerImageBottom
-//        case answerImageWhole
-//    }
-    
+    var deck: Deck?
     var card: Card?
-    var cardSide: CardSide = .front
-    var cardData: [CardSide:[CardContentPosistion:Any?]] = [:]
+    let tempCardController = TempCardController(side: .front)
+
     
     // Outlets for main controls
     @IBOutlet weak var createCardBackgroundView: UIView!
@@ -87,7 +72,8 @@ class CreateCardViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(addFieldBtnTapped), name: .addFieldBtnTapped, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(bottomImageBtnTapped), name: .bottomImageBtnTapped, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(bottomTextBtnTapped), name: .bottomTextBtnTapped, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(cardSideFilled), name: .cardSideFilled, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cardTopSectionFilled), name: .cardTopSectionFilled, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cardBottomSectionFilled), name: .cardBottomSectionFilled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteBottomSectionBtnTapped), name: .deleteBottomSectionBtnTapped, object: nil)
         
         
@@ -111,20 +97,29 @@ class CreateCardViewController: UIViewController {
     }
     @objc func bottomTextBtnTapped() {
     }
-    @objc func cardSideFilled(notification: Notification) {
-        if let object = notification.object as? [CardContentPosistion:Any] {
-            cardData[cardSide] = object
+    @objc func cardTopSectionFilled(notification: Notification) {
+        if let media = notification.object {
+            tempCardController.addMedia(position: .top, media: media)
+        }
+    }
+    @objc func cardBottomSectionFilled(notification: Notification) {
+        if let media = notification.object {
+            tempCardController.addMedia(position: .bottom, media: media)
         }
     }
     @objc func deleteBottomSectionBtnTapped() {
+        tempCardController.deleteContentPosition(position: .bottom)
     }
     
 
     @IBAction func flipBtnTapped(_ sender: UIButton) {
-        cardSide = cardSide == .front ? .back : .front
-        NotificationCenter.default.post(name: .cardFlipped, object: cardData)
+        tempCardController.side = tempCardController.side == .front ? .back : .front
+        NotificationCenter.default.post(name: .cardFlipped, object: nil)
     }
     @IBAction func doneBtnTapped(_ sender: UIButton) {
+        guard let deck = deck else { return }
+        tempCardController.saveCardIntoCoreData(deck: deck)
+        dismiss(animated: true)
     }
 
 

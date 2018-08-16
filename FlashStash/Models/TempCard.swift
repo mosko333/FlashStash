@@ -92,6 +92,10 @@ class TempSide {
         return top?.isText ?? false || bottom?.isText ?? false
     }
     
+    var hasTwoSections: Bool {
+        return top != nil && bottom != nil
+    }
+    
     func getPosition(_ position: CardContentPosistion) -> TempCardContentPosistion {
         if position == .top {
             if let _ = self.top {
