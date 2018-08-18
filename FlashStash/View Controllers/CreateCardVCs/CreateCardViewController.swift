@@ -13,7 +13,7 @@ class CreateCardViewController: UIViewController {
     var deck: Deck?
     var card: Card?
     let tempCardController = TempCardController(side: .front)
-
+    
     
     // Outlets for main controls
     @IBOutlet weak var createCardBackgroundView: UIView!
@@ -25,7 +25,7 @@ class CreateCardViewController: UIViewController {
     // Outlets for ContainerViews
     @IBOutlet weak var oneSectionShowContainerView: UIView!
     @IBOutlet weak var twoSectionsContainerView: UIView!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,35 +33,47 @@ class CreateCardViewController: UIViewController {
         setupNotificationObservers()
         
         //NotificationCenter.default.post(name: .addFieldBtnTapped, object: "ADam and Jayden <3")
-
+        
     }
     
     func setupView() {
         createCardBackgroundView.layer.borderColor = #colorLiteral(red: 0.3882352941, green: 0.831372549, blue: 0.4431372549, alpha: 1)
         createCardBackgroundView.layer.borderWidth = 4
         createCardBackgroundView.layer.cornerRadius = 10
-        setupBtn(cardSideFilled: false, bothCardSidesFilled: false)
+        setupCardSide()
+        setupBtn()
     }
     
     
     
-    func setupBtn(cardSideFilled: Bool, bothCardSidesFilled: Bool) {
-        if cardSideFilled {
+    func setupBtn() {
+        if tempCardController.tempCard.front.isBlank == false || tempCardController.tempCard.back.isBlank == false {
             flipBtn.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.8078431373, blue: 0.4, alpha: 1)
             flipBtn.isEnabled = true
-            if bothCardSidesFilled {
-                doneBtn.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.8078431373, blue: 0.4, alpha: 1)
-                doneBtn.isEnabled = true
-            } else {
-                doneBtn.backgroundColor = #colorLiteral(red: 0.6666666667, green: 0.8862745098, blue: 0.6901960784, alpha: 1)
-                doneBtn.isEnabled = false
-            }
         } else {
             flipBtn.backgroundColor = #colorLiteral(red: 0.6666666667, green: 0.8862745098, blue: 0.6901960784, alpha: 1)
             flipBtn.isEnabled = false
+        }
+        if tempCardController.tempCard.isComplete {
+            doneBtn.backgroundColor = #colorLiteral(red: 0.3058823529, green: 0.7803921569, blue: 0.3568627451, alpha: 1)
+            doneBtn.isEnabled = true
+        } else {
             doneBtn.backgroundColor = #colorLiteral(red: 0.6666666667, green: 0.8862745098, blue: 0.6901960784, alpha: 1)
             doneBtn.isEnabled = false
         }
+    }
+    
+    func setupCardSide() {
+        if tempCardController.tempCard.getSide(tempCardController.side).hasTwoSections {
+            twoSectionsContainerView.isHidden = false
+            oneSectionShowContainerView.isHidden = true
+        } else {
+            oneSectionShowContainerView.isHidden = false
+            twoSectionsContainerView.isHidden = true
+        }
+         NotificationCenter.default.post(name: .cardFlipped, object: tempCardController.tempCard.getSide(tempCardController.side))
+//        NotificationCenter.default.post(name: .cardFlipped, object: nil)
+        setupBtn()
     }
     
     // ContainerView funcs for creating cards
@@ -87,11 +99,9 @@ class CreateCardViewController: UIViewController {
     @objc func addFieldBtnTapped(notification: Notification) {
         twoSectionsContainerView.isHidden = false
         oneSectionShowContainerView.isHidden = true
-//        guard let myString = notification.object as? String else { return }
-//        print(myString)
     }
     @objc func deleteTopSectionBtnTapped() {
-
+        tempCardController.deleteMedia(position: .top)
     }
     @objc func bottomImageBtnTapped() {
     }
@@ -100,40 +110,52 @@ class CreateCardViewController: UIViewController {
     @objc func cardTopSectionFilled(notification: Notification) {
         if let media = notification.object {
             tempCardController.addMedia(position: .top, media: media)
+        } else {
+            tempCardController.deleteMedia(position: .top)
         }
+        setupBtn()
     }
     @objc func cardBottomSectionFilled(notification: Notification) {
         if let media = notification.object {
             tempCardController.addMedia(position: .bottom, media: media)
+        }else {
+            tempCardController.deleteMedia(position: .top)
         }
+        setupBtn()
     }
     @objc func deleteBottomSectionBtnTapped() {
         tempCardController.deleteContentPosition(position: .bottom)
     }
     
-
+    
     @IBAction func flipBtnTapped(_ sender: UIButton) {
-        tempCardController.side = tempCardController.side == .front ? .back : .front
-        NotificationCenter.default.post(name: .cardFlipped, object: nil)
+        if tempCardController.side == .front {
+            tempCardController.side = .back
+            sideOfCardLabel.text = "Back"
+        } else {
+            tempCardController.side = .front
+            sideOfCardLabel.text = "Front"
+        }
+        setupCardSide()
     }
     @IBAction func doneBtnTapped(_ sender: UIButton) {
         guard let deck = deck else { return }
         tempCardController.saveCardIntoCoreData(deck: deck)
         dismiss(animated: true)
     }
-
-
-
+    
+    
+    
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -47,17 +47,13 @@ class CardListViewController: UIViewController {
     }
 }
 
-extension CardListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CardListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func setupCollectionView() {
         cardListCollectionView.delegate = self
         cardListCollectionView.dataSource = self
-        
-        let layout = self.cardListCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: (self.cardListCollectionView.frame.size.width / 2) - 20 , height: self.cardListCollectionView.frame.size.height/3)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return FolderController.shared.folders.count
         guard let deck = deck,
             let cards = deck.cards else { return 0 }
         return cards.count
@@ -66,10 +62,29 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = cardListCollectionView.dequeueReusableCell(withReuseIdentifier: "cardCVCell", for: indexPath) as! CardListCollectionViewCell
-        //        cell.questionTextLabel
-        //        cell.folderNameLabel.text = FolderController.shared.folders[indexPath.row].name
-        //        cell.delegate = self
+        if let cards = deck?.cards,
+            let card = cards[indexPath.row] as? Card {
+            if let imageData = card.questionImage {
+                cell.questionTextLabel.isHidden = true
+                cell.questionImage.image = UIImage(data: imageData)
+                cell.questionImage.isHidden = false
+            } else if let text = card.questionText,
+                text.isEmpty == false {
+                cell.questionImage.isHidden = true
+                cell.questionTextLabel.text = text
+                cell.questionTextLabel.isHidden = false
+            }
+        }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (view.frame.width - 3 * 24) / 2
+        return CGSize(width: width, height: width * 1.38)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

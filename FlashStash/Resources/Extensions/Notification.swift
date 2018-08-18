@@ -9,6 +9,8 @@
 import Foundation
 
 extension Notification.Name {
+    // Add Card
+    // From ContainerView to CreateCardVC
     static let topImageBtnTapped = Notification.Name("topImageBtnTapped")
     static let topTextBtnTapped = Notification.Name("topTextBtnTapped")
     static let deleteTopSectionBtnTapped = Notification.Name("deleteTopSectionBtnTapped")
@@ -18,5 +20,8 @@ extension Notification.Name {
     static let cardTopSectionFilled = Notification.Name("cardTopSectionFilled")
     static let cardBottomSectionFilled = Notification.Name("cardBottomSectionFilled")
     static let deleteBottomSectionBtnTapped = Notification.Name("deleteBottomSectionBtnTapped")
+    
+    // From CreateCardVC to ContainerView
     static let cardFlipped = Notification.Name("cardFlipped")
+    
 }

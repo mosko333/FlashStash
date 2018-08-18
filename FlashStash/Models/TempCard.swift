@@ -81,7 +81,7 @@ class TempSide {
     // MARK: Getters
     //
     var isBlank: Bool {
-        return top?.isBlank ?? false && bottom?.isBlank ?? false
+        return top?.isBlank ?? true && bottom?.isBlank ?? true
     }
     
     var hasImage: Bool {

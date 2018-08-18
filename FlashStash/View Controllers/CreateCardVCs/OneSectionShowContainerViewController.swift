@@ -9,40 +9,56 @@
 import UIKit
 
 class OneSectionShowContainerViewController: UIViewController, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
-//    var tempCard: TempCard?
-//    var cardSide: CardSide = .front
-//    var cardField: CardField {
-//        //let state = cardSide == .front ? CardField.topQuestion : CardField.topAnswer
-//    return state }
 
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var cardTextView: UITextView!
     @IBOutlet weak var deleteFieldUIButton: UIButton!
     
+    lazy var textViewMargin = cardTextView.frame.size.height / 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cardTextView.delegate = self
+        addObservers()
     }
     
     func addObservers() {
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(setupCard), name: .cardFlipped, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(topImageBtnTapped), name: .topImageBtnTapped, object: nil)
+
+    }
+    
+    
+    /// Sets up the correct media for the card side
+    ///
+    /// - Parameter notification: The cardSide is passed in
+    @objc func setupCard(notification: Notification){
+        cardTextView.isHidden = true
+        cardImageView.isHidden = true
+        cardTextView.text = ""
+        cardImageView.image = nil
+        guard let cardSide = notification.object as? TempSide else { return }
+        if let image = cardSide.top?.image {
+            cardImageView.image = image
+            cardImageView.isHidden = false
+        } else if let text = cardSide.top?.text {
+            cardTextView.text = text
+            cardImageView.isHidden = false
+        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        
-        cardTextView.frame.size.height -= 100
+        // Reduces the height of the text field when the keyboard popsup.
+        cardTextView.frame.size.height -= textViewMargin
     }
+    
     func textViewDidEndEditing(_ textView: UITextView) {
-
-//        tempCard?.getSide(.front).top.text = cardTextView.text.isEmpty ? nil : cardTextView.text
-//        NotificationCenter.default.post(name: .cardSideFilled, object: tempCard)
-        
         if let text = cardTextView.text,
             !text.isEmpty {
             NotificationCenter.default.post(name: .cardTopSectionFilled, object: text)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.cardTextView.frame.size.height += self.textViewMargin
             UIView.animate(withDuration: 0.5) {
                 self.cardTextView.centerText()
             }
@@ -62,7 +78,6 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
         cardImageView.isHidden = false
         deleteFieldUIButton.isHidden = false
         showPictureInputActionSheet()
-        NotificationCenter.default.post(name: .topImageBtnTapped, object: nil)
     }
     
     @IBAction func addTextBtnTapped(_ sender: UIButton) {
@@ -70,8 +85,6 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
         cardTextView.centerText()
         cardImageView.isHidden = true
         deleteFieldUIButton.isHidden = false
-        NotificationCenter.default.post(name: .topTextBtnTapped, object: nil)
-
     }
     
     @IBAction func addFieldBtnTapped(_ sender: UIButton) {
@@ -111,11 +124,8 @@ extension OneSectionShowContainerViewController {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-
-        //guard let word = word else { return }
-        //WordController.addImage(with: image, to: word)
-        //wordImage.image = image
         cardImageView.image = image
+        NotificationCenter.default.post(name: .cardTopSectionFilled, object: image)
         picker.dismiss(animated: true, completion: nil)
     }
     
