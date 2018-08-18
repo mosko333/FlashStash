@@ -90,6 +90,7 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateCard" {
             if let destinationVC = segue.destination as? CreateCardViewController {
+                destinationVC.delegate = self
                 destinationVC.deck = deck
             }
         }
@@ -103,4 +104,11 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
     //        guard let indexPath = self.cardListCollectionView.indexPath(for: cell) else { return Folder()}
     //        return FolderController.shared.folders[indexPath.row]
     //    }
+}
+
+extension CardListViewController: CreateCardViewControllerDelegate {
+    func appendedDeck(deck: Deck) {
+        self.deck = deck
+        cardListCollectionView.reloadData()
+    }
 }

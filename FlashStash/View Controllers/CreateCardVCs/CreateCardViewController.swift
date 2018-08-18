@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol CreateCardViewControllerDelegate: class {
+    func appendedDeck(deck: Deck)
+}
+
 class CreateCardViewController: UIViewController {
     
     var deck: Deck?
     var card: Card?
     let tempCardController = TempCardController(side: .front)
+    weak var delegate: CreateCardViewControllerDelegate?
     
     
     // Outlets for main controls
@@ -141,7 +146,8 @@ class CreateCardViewController: UIViewController {
     @IBAction func doneBtnTapped(_ sender: UIButton) {
         guard let deck = deck else { return }
         tempCardController.saveCardIntoCoreData(deck: deck)
-        dismiss(animated: true)
+        delegate?.appendedDeck(deck: deck)
+        navigationController?.popViewController(animated: true)
     }
     
     
