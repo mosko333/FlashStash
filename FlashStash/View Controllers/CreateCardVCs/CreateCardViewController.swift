@@ -36,15 +36,16 @@ class CreateCardViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupNotificationObservers()
-        
-        //NotificationCenter.default.post(name: .addFieldBtnTapped, object: "ADam and Jayden <3")
-        
     }
     
     func setupView() {
         createCardBackgroundView.layer.borderColor = #colorLiteral(red: 0.3882352941, green: 0.831372549, blue: 0.4431372549, alpha: 1)
         createCardBackgroundView.layer.borderWidth = 4
         createCardBackgroundView.layer.cornerRadius = 10
+        if let card = card {
+            let sentTempCard = TempCard(card: card)
+            tempCardController.tempCard = sentTempCard
+        }
         setupCardSide()
         setupBtn()
     }
@@ -149,19 +150,23 @@ class CreateCardViewController: UIViewController {
         delegate?.appendedDeck(deck: deck)
         navigationController?.popViewController(animated: true)
     }
-    
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

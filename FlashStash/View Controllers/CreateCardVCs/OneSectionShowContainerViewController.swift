@@ -28,7 +28,9 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
         setupCard()
         addObservers()
     }
-    
+    //
+    // MARK: - Outlets
+    //
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(addMedia), name: .cardFlipped, object: nil)
     }
@@ -45,7 +47,7 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
         }
         setupCard()
     }
-    
+
     func setupCard(){
         cardTextView.isHidden = true
         cardImageView.isHidden = true

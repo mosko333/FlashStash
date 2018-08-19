@@ -41,6 +41,12 @@ class TempCard {
     
     convenience init(card: Card) {
         self.init()
+        if card.questionImage != nil || card.questionText != nil {
+            self.front.top = TempCardContentPosistion()
+        }
+        if card.answerImage != nil || card.answerText != nil {
+            self.back.top = TempCardContentPosistion()
+        }
         if let questionImage = card.questionImage {
             self.front.top?.image = UIImage(data: questionImage)
         }

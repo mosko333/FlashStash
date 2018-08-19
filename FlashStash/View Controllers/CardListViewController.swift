@@ -9,22 +9,30 @@
 import UIKit
 
 class CardListViewController: UIViewController {
-    
+    //
+    // MARK: - Properties
+    //
     var deck: Deck?
-    
+    //
+    // MARK: - Outlets
+    //
     @IBOutlet weak var emptyDeckLabel: UILabel!
     @IBOutlet weak var cardListCollectionView: UICollectionView!
     @IBOutlet weak var studyBtnOutlet: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+    //
+    // MARK: - Lifecycle Functions
+    //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupView()
         setupCollectionView()
     }
-    
+    //
+    // MARK: - Methods
+    //
     func setupView() {
         self.title = deck?.name
         if let deck = deck,
@@ -40,13 +48,17 @@ class CardListViewController: UIViewController {
         }
     }
     
-    
+    //
+    // MARK: - Actions
+    //
     @IBAction func studyBtnPressed(_ sender: UIButton) {
     }
     @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
     }
 }
-
+//
+// MARK: - Extensions
+//
 extension CardListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func setupCollectionView() {
         cardListCollectionView.delegate = self
@@ -92,6 +104,16 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
             if let destinationVC = segue.destination as? CreateCardViewController {
                 destinationVC.delegate = self
                 destinationVC.deck = deck
+            }
+        }
+        if segue.identifier == "toEditCard" {
+            if let destinationVC = segue.destination as? CreateCardViewController,
+                let indexPaths = self.cardListCollectionView.indexPathsForSelectedItems,
+                let cards = deck?.cards {
+                let indexPath = indexPaths[0]
+                let card = cards[indexPath.row] as? Card
+                destinationVC.deck = deck
+                destinationVC.card = card
             }
         }
     }

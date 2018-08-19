@@ -10,7 +10,7 @@ import Foundation
 
 class TempCardController {
     var side: CardSide
-    let tempCard = TempCard()
+    var tempCard = TempCard()
  
     init(side: CardSide) {
         self.side = side

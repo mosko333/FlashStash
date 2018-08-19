@@ -44,6 +44,10 @@
 		7E8213F42111251500E06F63 /* UIImage+CropRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8213E32111251500E06F63 /* UIImage+CropRotate.m */; };
 		7E8213F52111251500E06F63 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8213E82111251500E06F63 /* CropViewController.swift */; };
 		7E8213F62111251500E06F63 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E8213E92111251500E06F63 /* Info.plist */; };
+		7E93D2DE2128E37400D8B3B4 /* StudyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E93D2DD2128E37400D8B3B4 /* StudyCardViewController.swift */; };
+		7E93D2E12128EDED00D8B3B4 /* OneSectionStudyCardContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E93D2E02128EDED00D8B3B4 /* OneSectionStudyCardContainerViewController.swift */; };
+		7E93D2E32128EE1700D8B3B4 /* TwoSectionStudyCardContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E93D2E22128EE1700D8B3B4 /* TwoSectionStudyCardContainerViewController.swift */; };
+		7E93D2E52128F47D00D8B3B4 /* StudyCardResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E93D2E42128F47D00D8B3B4 /* StudyCardResultsViewController.swift */; };
 		7EC95A6D211A8CFC004DED4C /* AutoCropCameraScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC95A6C211A8CFC004DED4C /* AutoCropCameraScanner.swift */; };
 		7EC95A70211A8EB3004DED4C /* AutoCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC95A6F211A8EB3004DED4C /* AutoCropViewController.swift */; };
 		7EC95A72211A9186004DED4C /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC95A71211A9186004DED4C /* PhotoPreviewViewController.swift */; };
@@ -146,6 +150,10 @@
 		7E8213E82111251500E06F63 /* CropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropViewController.swift; sourceTree = "<group>"; };
 		7E8213E92111251500E06F63 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E8213F72111252000E06F63 /* FlashStash-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlashStash-Bridging-Header.h"; sourceTree = "<group>"; };
+		7E93D2DD2128E37400D8B3B4 /* StudyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCardViewController.swift; sourceTree = "<group>"; };
+		7E93D2E02128EDED00D8B3B4 /* OneSectionStudyCardContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSectionStudyCardContainerViewController.swift; sourceTree = "<group>"; };
+		7E93D2E22128EE1700D8B3B4 /* TwoSectionStudyCardContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSectionStudyCardContainerViewController.swift; sourceTree = "<group>"; };
+		7E93D2E42128F47D00D8B3B4 /* StudyCardResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCardResultsViewController.swift; sourceTree = "<group>"; };
 		7EC95A6C211A8CFC004DED4C /* AutoCropCameraScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCropCameraScanner.swift; sourceTree = "<group>"; };
 		7EC95A6F211A8EB3004DED4C /* AutoCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCropViewController.swift; sourceTree = "<group>"; };
 		7EC95A71211A9186004DED4C /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +325,17 @@
 			path = CropViewController;
 			sourceTree = "<group>";
 		};
+		7E93D2DF2128ED7200D8B3B4 /* StudyCardVC */ = {
+			isa = PBXGroup;
+			children = (
+				7E93D2DD2128E37400D8B3B4 /* StudyCardViewController.swift */,
+				7E93D2E02128EDED00D8B3B4 /* OneSectionStudyCardContainerViewController.swift */,
+				7E93D2E22128EE1700D8B3B4 /* TwoSectionStudyCardContainerViewController.swift */,
+				7E93D2E42128F47D00D8B3B4 /* StudyCardResultsViewController.swift */,
+			);
+			path = StudyCardVC;
+			sourceTree = "<group>";
+		};
 		7EC95A6E211A8E77004DED4C /* AutoCropVCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +414,7 @@
 				7EC95A6E211A8E77004DED4C /* AutoCropVCs */,
 				7E4568BA21113AD500F3B1C6 /* ManualCropVCs */,
 				7EF78AED2112BBD600E62C31 /* CreateCardVCs */,
+				7E93D2DF2128ED7200D8B3B4 /* StudyCardVC */,
 				7E0A31B5210BD0FA0013DCDE /* HomeViewController.swift */,
 				7E5B7D02210D703200D515A8 /* DeckListTableViewController.swift */,
 				7E5B7D04210EA17200D515A8 /* AddDeckViewController.swift */,
@@ -665,6 +685,7 @@
 			files = (
 				7EF008352108F21F00A93804 /* DeckController.swift in Sources */,
 				7E5B7D05210EA17200D515A8 /* AddDeckViewController.swift in Sources */,
+				7E93D2E52128F47D00D8B3B4 /* StudyCardResultsViewController.swift in Sources */,
 				7E23DF5F211225E400ECB907 /* CreateCardViewController.swift in Sources */,
 				7EF0082B2107F5B900A93804 /* Deck.swift in Sources */,
 				7E8213F32111251500E06F63 /* TOCropToolbar.m in Sources */,
@@ -686,6 +707,7 @@
 				7E8213EE2111251500E06F63 /* TOCropViewController.m in Sources */,
 				7E31E1F821090A740073190B /* CardController.swift in Sources */,
 				7E30069D211B966800FD2121 /* TempCard.swift in Sources */,
+				7E93D2E32128EE1700D8B3B4 /* TwoSectionStudyCardContainerViewController.swift in Sources */,
 				7EC95A72211A9186004DED4C /* PhotoPreviewViewController.swift in Sources */,
 				7E4568BC21113B0D00F3B1C6 /* CardListViewController.swift in Sources */,
 				7E5B7D03210D703200D515A8 /* DeckListTableViewController.swift in Sources */,
@@ -693,11 +715,13 @@
 				7EC95A6D211A8CFC004DED4C /* AutoCropCameraScanner.swift in Sources */,
 				7EF008292107F53F00A93804 /* Card.swift in Sources */,
 				7E8213EB2111251500E06F63 /* TOActivityCroppedImageProvider.m in Sources */,
+				7E93D2DE2128E37400D8B3B4 /* StudyCardViewController.swift in Sources */,
 				7EDF03412107B9FF00DFEEE3 /* AppDelegate.swift in Sources */,
 				7EF008332108EF1C00A93804 /* FolderController.swift in Sources */,
 				7E0A31AE210BD0870013DCDE /* FolderCollectionViewCell.swift in Sources */,
 				7EF78AEF2112BC0B00E62C31 /* OneSectionShowContainerViewController.swift in Sources */,
 				7E4568BE21113C9200F3B1C6 /* CardListCollectionViewCell.swift in Sources */,
+				7E93D2E12128EDED00D8B3B4 /* OneSectionStudyCardContainerViewController.swift in Sources */,
 				7E8213F02111251500E06F63 /* TOCropScrollView.m in Sources */,
 				7E8213EC2111251500E06F63 /* TOCropViewControllerTransitioning.m in Sources */,
 			);
