@@ -18,10 +18,9 @@ class DeckListTableViewController: UITableViewController {
         self.title = folder?.name
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
     }
     
     @IBAction func addBtnPressed(_ sender: UIBarButtonItem) {

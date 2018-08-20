@@ -23,6 +23,14 @@ class CardController {
         CoreDataStack.save()
     }
     
+    static func updateCardWithTempCart(tempCard: TempCard, card: Card, to deck: Deck) -> Card {
+        card.questionText = tempCard.front.top?.text
+        card.questionImage = tempCard.front.top?.imageData
+        card.answerText = tempCard.back.top?.text
+        card.answerImage = tempCard.back.top?.imageData
+        return card
+    }
+    
     static func delete(card: Card, fromA deck: Deck) {
         CoreDataStack.context.delete(card)
         CoreDataStack.save()

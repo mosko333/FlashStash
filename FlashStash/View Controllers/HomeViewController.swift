@@ -9,17 +9,27 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
+    //
+    // MARK: - Properties
+    //
     var folder = FolderController.shared.folders[0]
+    //
+    // MARK: - Outlets
+    //
     @IBOutlet weak var folderCollectionView: UICollectionView!
-    
+    //
+    // MARK: - Lifecycle Functions
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         setupCollectionView()
     }
-    
-    
-    
+    //
+    // MARK: - Actions
+    //
     @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
         //let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         let actionSheet = UIAlertController()
@@ -35,8 +45,9 @@ class HomeViewController: UIViewController {
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true)
     }
+    //
     // MARK: - Navigation
-    
+    //
     @IBAction func unwindHomeVC(segue:UIStoryboardSegue) { }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -48,11 +59,14 @@ class HomeViewController: UIViewController {
         }
     }
 }
-
+//
+// MARK: - Extensions
+//
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func setupCollectionView() {
         folderCollectionView.delegate = self
         folderCollectionView.dataSource = self
+        folderCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -65,7 +79,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return FolderController.shared.folders.count
         return FolderController.shared.folders.count
     }
     

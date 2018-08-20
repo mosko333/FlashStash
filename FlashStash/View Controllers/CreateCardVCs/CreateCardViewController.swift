@@ -34,8 +34,8 @@ class CreateCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         setupNotificationObservers()
+        setupView()
     }
     
     func setupView() {
@@ -47,7 +47,6 @@ class CreateCardViewController: UIViewController {
             tempCardController.tempCard = sentTempCard
         }
         setupCardSide()
-        setupBtn()
     }
     
     
@@ -77,8 +76,7 @@ class CreateCardViewController: UIViewController {
             oneSectionShowContainerView.isHidden = false
             twoSectionsContainerView.isHidden = true
         }
-         NotificationCenter.default.post(name: .cardFlipped, object: tempCardController.tempCard.getSide(tempCardController.side))
-//        NotificationCenter.default.post(name: .cardFlipped, object: nil)
+        NotificationCenter.default.post(name: .cardFlipped, object: tempCardController.tempCard.getSide(tempCardController.side))
         setupBtn()
     }
     
@@ -144,9 +142,14 @@ class CreateCardViewController: UIViewController {
         }
         setupCardSide()
     }
+    
     @IBAction func doneBtnTapped(_ sender: UIButton) {
         guard let deck = deck else { return }
-        tempCardController.saveCardIntoCoreData(deck: deck)
+        if let card = card {
+            self.card = CardController.updateCardWithTempCart(tempCard: tempCardController.tempCard, card: card, to: deck)
+        } else {
+            tempCardController.saveCardIntoCoreData(deck: deck)
+        }
         delegate?.appendedDeck(deck: deck)
         navigationController?.popViewController(animated: true)
     }

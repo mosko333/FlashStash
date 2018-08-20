@@ -63,6 +63,7 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
     func setupCollectionView() {
         cardListCollectionView.delegate = self
         cardListCollectionView.dataSource = self
+        cardListCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

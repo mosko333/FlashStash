@@ -13,28 +13,30 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
     struct Constants {
         static var placeholderText = "Please enter your note here:"
     }
-
-    @IBOutlet weak var cardImageView: UIImageView!
-    @IBOutlet weak var cardTextView: UITextView!
-    @IBOutlet weak var deleteFieldUIButton: UIButton!
-    
-    lazy var textViewMargin = cardTextView.frame.size.height / 3
-    var text: String?
-    var image: UIImage?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        cardTextView.delegate = self
-        setupCard()
-        addObservers()
-    }
     //
     // MARK: - Outlets
     //
+    @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet weak var cardTextView: UITextView!
+    @IBOutlet weak var deleteFieldUIButton: UIButton!
+    //
+    // MARK: - Properties
+    //
+    lazy var textViewMargin = cardTextView.frame.size.height / 3
+    var text: String?
+    var image: UIImage?
+    //
+    // MARK: - Lifecycle Functions
+    //
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cardTextView.delegate = self
+        addObservers()
+        setupCard()
+    }
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(addMedia), name: .cardFlipped, object: nil)
     }
-    
     @objc func addMedia(notification: Notification) {
         image = nil
         text = nil
@@ -51,6 +53,7 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
     func setupCard(){
         cardTextView.isHidden = true
         cardImageView.isHidden = true
+        deleteFieldUIButton.isHidden = false
         addPlaceholderText()
         cardImageView.image = nil
         if let image = image {
@@ -61,6 +64,11 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
             cardTextView.textColor = .black
             cardTextView.text = text
             cardTextView.isHidden = false
+            DispatchQueue.main.async {
+                self.cardTextView.centerText()
+            }
+        } else {
+            deleteFieldUIButton.isHidden = true
         }
     }
     
