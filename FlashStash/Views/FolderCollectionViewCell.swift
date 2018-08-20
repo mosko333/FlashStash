@@ -12,18 +12,26 @@ protocol FolderCellEditDelegate: class {
 }
 
 class FolderCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
-    
+    //
+    // MARK: - Properties
+    //
     lazy var geture = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
     weak var delegate: FolderCellEditDelegate?
-    
+    //
+    // MARK: - Outlets
+    //
     @IBOutlet weak var folderNameLabel: UILabel!
-    
+    //
+    // MARK: - Lifecycle Functions
+    //
     override func awakeFromNib() {
         super.awakeFromNib()
         geture.delegate = self
         addGestureRecognizer(geture)
     }
-    
+    //
+    // MARK: - Actions
+    //
     @objc func longPress() {
         print("Long press")
         delegate?.selectedFolder(cell: self)

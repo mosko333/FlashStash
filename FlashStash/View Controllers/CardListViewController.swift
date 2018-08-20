@@ -75,6 +75,7 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = cardListCollectionView.dequeueReusableCell(withReuseIdentifier: "cardCVCell", for: indexPath) as! CardListCollectionViewCell
+        cell.delegate = self
         if let cards = deck?.cards,
             let card = cards[indexPath.row] as? Card {
             if let imageData = card.questionImage {
@@ -100,6 +101,14 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
         return UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
     }
     
+    func findCardForCell(cell: CardListCollectionViewCell) -> Card {
+        guard let indexPath = self.cardListCollectionView.indexPath(for: cell),
+        let cards = deck?.cards,
+        let card = cards[indexPath.row] as? Card
+        else { return Card()}
+        return card
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateCard" {
             if let destinationVC = segue.destination as? CreateCardViewController {
@@ -118,20 +127,25 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
             }
         }
     }
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //        folder = FolderController.shared.folders[indexPath.row]
-    //        performSegue(withIdentifier: "toDeckList", sender: indexPath)
-    //    }
-    //
-    //    func findFolderForCell(cell: FolderCollectionViewCell) -> Folder {
-    //        guard let indexPath = self.cardListCollectionView.indexPath(for: cell) else { return Folder()}
-    //        return FolderController.shared.folders[indexPath.row]
-    //    }
 }
 
 extension CardListViewController: CreateCardViewControllerDelegate {
     func appendedDeck(deck: Deck) {
         self.deck = deck
         cardListCollectionView.reloadData()
+    }
+}
+
+extension CardListViewController: CardListCellEditDelegate {
+    func selectedCard(cell: CardListCollectionViewCell) {
+        let actionSheet = UIAlertController()
+        actionSheet.addAction(UIAlertAction(title: "Delete Card", style: .destructive, handler: { (action:UIAlertAction) in
+            let card = self.findCardForCell(cell: cell)
+            guard let deck = self.deck else { return }
+            CardController.delete(card: card, fromA: deck)
+            self.cardListCollectionView.reloadData()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true)
     }
 }
