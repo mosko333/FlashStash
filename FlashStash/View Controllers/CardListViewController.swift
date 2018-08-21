@@ -55,6 +55,32 @@ class CardListViewController: UIViewController {
     }
     @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
     }
+    //
+    // MARK: - Navigation
+    //
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toStudyCards" {
+            if let destinationVC = segue.destination as? StudyCardViewController {
+                destinationVC.deck = deck
+            }
+        }
+        if segue.identifier == "toCreateCard" {
+            if let destinationVC = segue.destination as? CreateCardViewController {
+                destinationVC.delegate = self
+                destinationVC.deck = deck
+            }
+        }
+        if segue.identifier == "toEditCard" {
+            if let destinationVC = segue.destination as? CreateCardViewController,
+                let indexPaths = self.cardListCollectionView.indexPathsForSelectedItems,
+                let cards = deck?.cards {
+                let indexPath = indexPaths[0]
+                let card = cards[indexPath.row] as? Card
+                destinationVC.deck = deck
+                destinationVC.card = card
+            }
+        }
+    }
 }
 //
 // MARK: - Extensions
@@ -107,25 +133,6 @@ extension CardListViewController: UICollectionViewDelegate, UICollectionViewData
         let card = cards[indexPath.row] as? Card
         else { return Card()}
         return card
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toCreateCard" {
-            if let destinationVC = segue.destination as? CreateCardViewController {
-                destinationVC.delegate = self
-                destinationVC.deck = deck
-            }
-        }
-        if segue.identifier == "toEditCard" {
-            if let destinationVC = segue.destination as? CreateCardViewController,
-                let indexPaths = self.cardListCollectionView.indexPathsForSelectedItems,
-                let cards = deck?.cards {
-                let indexPath = indexPaths[0]
-                let card = cards[indexPath.row] as? Card
-                destinationVC.deck = deck
-                destinationVC.card = card
-            }
-        }
     }
 }
 

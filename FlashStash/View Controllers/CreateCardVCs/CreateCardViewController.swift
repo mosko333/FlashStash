@@ -76,18 +76,14 @@ class CreateCardViewController: UIViewController {
             oneSectionShowContainerView.isHidden = false
             twoSectionsContainerView.isHidden = true
         }
-        NotificationCenter.default.post(name: .cardFlipped, object: tempCardController.tempCard.getSide(tempCardController.side))
+        NotificationCenter.default.post(name: .sendCardMedia, object: tempCardController.tempCard.getSide(tempCardController.side))
         setupBtn()
     }
     
     // ContainerView funcs for creating cards
     func setupNotificationObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(topImageBtnTapped), name: .topImageBtnTapped, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(topTextBtnTapped), name: .topTextBtnTapped, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteTopSectionBtnTapped), name: .deleteTopSectionBtnTapped, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(addFieldBtnTapped), name: .addFieldBtnTapped, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(bottomImageBtnTapped), name: .bottomImageBtnTapped, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(bottomTextBtnTapped), name: .bottomTextBtnTapped, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(cardTopSectionFilled), name: .cardTopSectionFilled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(cardBottomSectionFilled), name: .cardBottomSectionFilled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteBottomSectionBtnTapped), name: .deleteBottomSectionBtnTapped, object: nil)
@@ -96,20 +92,13 @@ class CreateCardViewController: UIViewController {
         // DELETE
     }
     
-    @objc func topImageBtnTapped() {
-    }
-    @objc func topTextBtnTapped(notification: Notification) {
-    }
     @objc func addFieldBtnTapped(notification: Notification) {
         twoSectionsContainerView.isHidden = false
         oneSectionShowContainerView.isHidden = true
     }
     @objc func deleteTopSectionBtnTapped() {
         tempCardController.deleteMedia(position: .top)
-    }
-    @objc func bottomImageBtnTapped() {
-    }
-    @objc func bottomTextBtnTapped() {
+        setupBtn()
     }
     @objc func cardTopSectionFilled(notification: Notification) {
         if let media = notification.object {

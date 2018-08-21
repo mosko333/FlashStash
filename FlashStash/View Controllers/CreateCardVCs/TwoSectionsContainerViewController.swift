@@ -29,10 +29,8 @@ class TwoSectionsContainerViewController: UIViewController {
     }
     
     @IBAction func addBottomImageBtnTapped(_ sender: UIButton) {
-        NotificationCenter.default.post(name: .bottomImageBtnTapped, object: nil)
     }
     @IBAction func addBottomTextViewBtnTapped(_ sender: UIButton) {
-        NotificationCenter.default.post(name: .bottomTextBtnTapped, object: nil)
     }
     @IBAction func deleteBottomSection(_ sender: UIButton) {
         NotificationCenter.default.post(name: .deleteBottomSectionBtnTapped, object: nil)

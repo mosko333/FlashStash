@@ -35,7 +35,7 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
         setupCard()
     }
     func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(addMedia), name: .cardFlipped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addMedia), name: .sendCardMedia, object: nil)
     }
     @objc func addMedia(notification: Notification) {
         image = nil

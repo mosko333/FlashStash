@@ -35,13 +35,10 @@ class HomeViewController: UIViewController {
         let actionSheet = UIAlertController()
         actionSheet.addAction(UIAlertAction(title: "Create A New Stash", style: .default, handler: { (action:UIAlertAction) in
             self.presentFolderNamingAlertController(cell: nil)
-            
         }))
-        
         actionSheet.addAction(UIAlertAction(title: "Create A New Deck", style: .default, handler: { (action:UIAlertAction) in
             self.performSegue(withIdentifier: "addDeck", sender: self)
         }))
-        
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true)
     }
@@ -82,8 +79,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return FolderController.shared.folders.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {        
         let cell = folderCollectionView.dequeueReusableCell(withReuseIdentifier: "folderCell", for: indexPath) as! FolderCollectionViewCell
         cell.folderNameLabel.text = FolderController.shared.folders[indexPath.row].name
         cell.delegate = self
