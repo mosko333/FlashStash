@@ -9,27 +9,29 @@
 import UIKit
 
 class StudyCardResultsViewController: UIViewController {
-
+    //
+    // MARK: - Outlets
+    //
+    @IBOutlet weak var numberOfCorrectCardsLabel: UILabel!
+    @IBOutlet weak var numberOfIncorrectCardsLabel: UILabel!
+    //
+    // MARK: - Lifecycle Functions
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        addObservers()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //
+    // MARK: - Methods
+    //
+    func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateScore), name: .sendCardMedia, object: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc func updateScore(notification: Notification) {
+        guard let score = notification.object as? Dictionary<String, Int>,
+        let correctNumber = score["correct"],
+        let incorrectNumber = score["incorrect"] else { return }
+        numberOfCorrectCardsLabel.text = "\(correctNumber)"
+        numberOfIncorrectCardsLabel.text = "\(incorrectNumber)"
     }
-    */
-
 }

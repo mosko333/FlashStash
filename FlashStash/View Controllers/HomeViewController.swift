@@ -26,6 +26,13 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupCollectionView()
+        setupBanner()
+    }
+    private func setupBanner() {
+        guard let navigationController = self.navigationController else { return }
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Tragic Marker", size: 28)!,
+                                                                  NSAttributedStringKey.foregroundColor:UIColor.white]
+        self.title = "FLASHSTASH"
     }
     //
     // MARK: - Actions

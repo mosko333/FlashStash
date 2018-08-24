@@ -15,6 +15,7 @@ class StudyCardViewController: UIViewController {
     var deck: Deck?
     var cardSide = CardSide.front
     var cardCount = 0
+    var score = ["correct":0, "incorrect":0]
     //
     // MARK: - Outlets
     //
@@ -48,6 +49,8 @@ class StudyCardViewController: UIViewController {
             resultsContainerView.isHidden = false
             correctBtn.isEnabled = false
             incorrectBtn.isEnabled = false
+            cardSideLabel.text = "Results"
+            NotificationCenter.default.post(name: .sendCardMedia, object: score)
         } else {
             guard let card = cards[cardCount] as? Card else {return}
             let tempCard = TempCard(card: card)
@@ -62,15 +65,12 @@ class StudyCardViewController: UIViewController {
             }
             NotificationCenter.default.post(name: .sendCardMedia, object: tempCard.getSide(cardSide))
             cardSideLabel.text = cardSide == .front ? "Front" : "Back"
-            if cardCount == cards.count {
-                cardSideLabel.text = "Results"
-            }
         }
     }
     func flipCard() {
         setupNewCard()
         let transitionOptions = UIViewAnimationOptions.transitionFlipFromLeft
-        UIView.transition(with: self.wholeCardView, duration: 1, options: transitionOptions, animations: {
+        UIView.transition(with: self.wholeCardView, duration: 0.5, options: transitionOptions, animations: {
             self.cardSide = self.cardSide == .front ? .back : .front
             self.setupNewCard()
         })
@@ -78,8 +78,9 @@ class StudyCardViewController: UIViewController {
     
     func nextCard() {
         cardCount += 1
+        cardSide = .front
         let transitionOptions = UIViewAnimationOptions.transitionCurlUp
-        UIView.transition(with: self.wholeCardView, duration: 1, options: transitionOptions, animations: {
+        UIView.transition(with: self.wholeCardView, duration: 0.5, options: transitionOptions, animations: {
             self.setupNewCard()
         })
     }
@@ -90,9 +91,15 @@ class StudyCardViewController: UIViewController {
         flipCard()
     }
     @IBAction func correctBtnTapped(_ sender: UIButton) {
+        if let correctNumber = score["correct"] {
+        score["correct"] = correctNumber + 1
+        }
         nextCard()
     }
     @IBAction func incorrectBtnTapped(_ sender: UIButton) {
+        if let incorrectNumber = score["incorrect"] {
+            score["incorrect"] = incorrectNumber + 1
+        }
         nextCard()
     }
 }

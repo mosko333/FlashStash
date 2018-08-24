@@ -40,6 +40,9 @@ class OneSectionStudyCardContainerViewController: UIViewController, UIGestureRec
         } else if let text = tempSide.top?.text,
             !text.isEmpty {
             cardTextView.text = text
+//            cardTextView.font = UIFont(name: "Avenir Next", size: 90)
+//            cardTextView.adjustsFontSizeToFitWidth = true
+//            cardTextView.minimumScaleFactor = 0.36
             cardTextView.isHidden = false
             DispatchQueue.main.async {
                 self.cardTextView.centerText()

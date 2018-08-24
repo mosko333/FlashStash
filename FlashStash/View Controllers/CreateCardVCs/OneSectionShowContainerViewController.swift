@@ -123,7 +123,14 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
     }
     
     @IBAction func addFieldBtnTapped(_ sender: UIButton) {
-        NotificationCenter.default.post(name: .addFieldBtnTapped, object: nil)
+        var media: Any? = nil
+        if let text = text,
+            !text.isEmpty {
+            media = text
+        } else if let image = image {
+            media = image
+        }
+        NotificationCenter.default.post(name: .addFieldBtnTapped, object: media)
     }
 }
 
@@ -144,9 +151,9 @@ extension OneSectionShowContainerViewController {
             }
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Scan", style: .default, handler: { (action:UIAlertAction) in
-
-        }))
+//        actionSheet.addAction(UIAlertAction(title: "Scan", style: .default, handler: { (action:UIAlertAction) in
+//
+//        }))
         
         actionSheet.addAction(UIAlertAction(title: "Library", style: .default, handler: { (action:UIAlertAction) in
             imagePickerController.sourceType = .photoLibrary

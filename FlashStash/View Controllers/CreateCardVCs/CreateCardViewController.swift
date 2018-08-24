@@ -137,7 +137,6 @@ class CreateCardViewController: UIViewController {
         if card == nil {
             tempCardController.saveCardIntoCoreData(deck: deck)
         } else {
-            //let updatedCard = Card(deck: deck, tempCard: tempCardController.tempCard)
             self.card?.questionText = tempCardController.tempCard.front.top?.text
         }
         delegate?.appendedDeck(deck: deck)
