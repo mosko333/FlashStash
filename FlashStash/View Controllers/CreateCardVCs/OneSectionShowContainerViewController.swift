@@ -109,10 +109,7 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
     }
     
     @IBAction func addImageBtnTapped(_ sender: UIButton) {
-        cardTextView.isHidden = true
-        cardImageView.isHidden = false
-        deleteFieldUIButton.isHidden = false
-        showPictureInputActionSheet()
+        showPictureInputActionSheet(sender)
     }
     
     @IBAction func addTextBtnTapped(_ sender: UIButton) {
@@ -136,7 +133,7 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
 
 extension OneSectionShowContainerViewController {
     
-    func showPictureInputActionSheet() {
+    func showPictureInputActionSheet(_ sender: UIButton) {
         
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -161,10 +158,18 @@ extension OneSectionShowContainerViewController {
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        // If the device is an ipad, this statement adds the actionSheet from the button
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.sourceView = sender
+        }
+        
         self.present(actionSheet, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        cardTextView.isHidden = true
+        cardImageView.isHidden = false
+        deleteFieldUIButton.isHidden = false
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         cardImageView.image = image
         NotificationCenter.default.post(name: .cardTopSectionFilled, object: image)

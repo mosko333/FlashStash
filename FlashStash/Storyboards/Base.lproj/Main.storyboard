@@ -220,22 +220,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2E-e3-p5m" userLabel="CardContainerViews">
-                                        <rect key="frame" x="16" y="48.000000000000028" width="340" height="465.66666666666674"/>
+                                        <rect key="frame" x="16" y="49.333333333333343" width="340" height="464.33333333333326"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mk6-dL-AL6" userLabel="OneSection">
-                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="465.66666666666669"/>
+                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="464.33333333333331"/>
                                                 <connections>
                                                     <segue destination="jnC-aF-EeZ" kind="embed" id="En3-T9-AVD"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTg-UT-VEr" userLabel="TwoSections">
-                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="465.66666666666669"/>
+                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="464.33333333333331"/>
                                                 <connections>
                                                     <segue destination="S7C-Hl-cW9" kind="embed" id="z4a-vU-z3u"/>
                                                 </connections>
                                             </containerView>
                                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEo-lr-94A" userLabel="Results">
-                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="465.66666666666669"/>
+                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="464.33333333333331"/>
                                                 <connections>
                                                     <segue destination="1iX-Pk-JZ5" kind="embed" id="Dv1-52-4aU"/>
                                                 </connections>
@@ -257,17 +257,27 @@
                                             <constraint firstItem="hEo-lr-94A" firstAttribute="height" secondItem="mk6-dL-AL6" secondAttribute="height" id="zEf-CQ-SKv"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHB-SU-Fm1">
+                                        <rect key="frame" x="66.333333333333314" y="33.666666666666671" width="240" height="14.666666666666664"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="XCf-MN-Bvm"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Zjk-Gn-Jrx" firstAttribute="leading" secondItem="s9K-VX-QKy" secondAttribute="leading" id="8TS-iz-mUg"/>
+                                    <constraint firstItem="uHB-SU-Fm1" firstAttribute="height" secondItem="s9K-VX-QKy" secondAttribute="height" multiplier="0.0267" id="G0L-jZ-4jW"/>
+                                    <constraint firstItem="uHB-SU-Fm1" firstAttribute="top" secondItem="Qt9-Hn-qFh" secondAttribute="bottom" id="GF0-bA-RkI"/>
                                     <constraint firstItem="Qt9-Hn-qFh" firstAttribute="top" secondItem="s9K-VX-QKy" secondAttribute="top" constant="9" id="LQu-DG-neJ"/>
                                     <constraint firstItem="Zjk-Gn-Jrx" firstAttribute="top" secondItem="s9K-VX-QKy" secondAttribute="top" id="PFw-pN-xuw"/>
+                                    <constraint firstItem="uHB-SU-Fm1" firstAttribute="centerX" secondItem="s9K-VX-QKy" secondAttribute="centerX" id="UN9-ZK-EFO"/>
+                                    <constraint firstItem="e2E-e3-p5m" firstAttribute="top" secondItem="uHB-SU-Fm1" secondAttribute="bottom" id="c6T-Aq-oFH"/>
                                     <constraint firstAttribute="trailing" secondItem="e2E-e3-p5m" secondAttribute="trailing" constant="16" id="fHG-x2-U7K"/>
                                     <constraint firstAttribute="trailing" secondItem="Zjk-Gn-Jrx" secondAttribute="trailing" id="fIr-dO-KmP"/>
                                     <constraint firstAttribute="bottom" secondItem="e2E-e3-p5m" secondAttribute="bottom" constant="24" id="lAX-WV-MEA"/>
-                                    <constraint firstItem="e2E-e3-p5m" firstAttribute="top" secondItem="s9K-VX-QKy" secondAttribute="top" constant="48" id="oKh-jH-LJj"/>
                                     <constraint firstItem="Qt9-Hn-qFh" firstAttribute="centerX" secondItem="s9K-VX-QKy" secondAttribute="centerX" id="oiR-lx-kbG"/>
                                     <constraint firstItem="e2E-e3-p5m" firstAttribute="leading" secondItem="s9K-VX-QKy" secondAttribute="leading" constant="16" id="w7q-YO-8a9"/>
                                     <constraint firstAttribute="bottom" secondItem="Zjk-Gn-Jrx" secondAttribute="bottom" id="xwS-5W-TJl"/>
@@ -369,27 +379,27 @@
                                 <rect key="frame" x="0.0" y="16" width="414" height="656"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="org-CM-meq">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="158" height="234"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCVCell" id="Mob-0G-Db1" customClass="CardListCollectionViewCell" customModule="FlashStash" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="234"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="158" height="234"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xcaCardListCell" translatesAutoresizingMaskIntoConstraints="NO" id="S3G-Zc-5ga">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="234"/>
                                                 </imageView>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gj2-zI-ily">
-                                                    <rect key="frame" x="10" y="32" width="30" height="12"/>
+                                                    <rect key="frame" x="8" y="34.999999999999986" width="142" height="187.66666666666663"/>
                                                 </imageView>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ro8-e0-gL4">
-                                                    <rect key="frame" x="10" y="28" width="30" height="12"/>
+                                                    <rect key="frame" x="8" y="34.999999999999986" width="142" height="187.66666666666663"/>
                                                     <string key="text">Cauliflower cheese macaroni cheese cut the cheese. Gouda hard cheese cheesecake gouda manchego cheesy feet danish fontina queso. The big cheese stinking bishop cow roquefort goat cheese triangles cheese slices danish fontina.</string>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                     <nil key="textColor"/>
@@ -398,18 +408,18 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="ro8-e0-gL4" secondAttribute="bottom" constant="2" id="5fl-vb-wj8"/>
+                                            <constraint firstItem="ro8-e0-gL4" firstAttribute="width" secondItem="gj2-zI-ily" secondAttribute="width" id="3ak-4V-evI"/>
+                                            <constraint firstItem="ro8-e0-gL4" firstAttribute="centerX" secondItem="gj2-zI-ily" secondAttribute="centerX" id="Ag1-Ic-IXv"/>
+                                            <constraint firstItem="gj2-zI-ily" firstAttribute="centerY" secondItem="S3G-Zc-5ga" secondAttribute="centerY" multiplier="1.1" id="BKn-vB-B4c"/>
+                                            <constraint firstItem="ro8-e0-gL4" firstAttribute="height" secondItem="gj2-zI-ily" secondAttribute="height" id="CLP-tu-VEp"/>
                                             <constraint firstItem="S3G-Zc-5ga" firstAttribute="top" secondItem="Mob-0G-Db1" secondAttribute="top" id="CXe-0B-lcM"/>
                                             <constraint firstAttribute="trailing" secondItem="S3G-Zc-5ga" secondAttribute="trailing" id="Cf8-KX-9e9"/>
+                                            <constraint firstItem="ro8-e0-gL4" firstAttribute="centerY" secondItem="gj2-zI-ily" secondAttribute="centerY" id="Oau-R1-Mzi"/>
                                             <constraint firstAttribute="bottom" secondItem="S3G-Zc-5ga" secondAttribute="bottom" id="P7v-fL-wUc"/>
-                                            <constraint firstItem="ro8-e0-gL4" firstAttribute="leading" secondItem="Mob-0G-Db1" secondAttribute="leadingMargin" constant="2" id="Rsk-Pt-7MT"/>
-                                            <constraint firstItem="gj2-zI-ily" firstAttribute="leading" secondItem="ro8-e0-gL4" secondAttribute="leading" id="U0p-Lb-YLd"/>
-                                            <constraint firstItem="gj2-zI-ily" firstAttribute="height" secondItem="ro8-e0-gL4" secondAttribute="height" multiplier="0.98" id="ZMV-vw-3Bf"/>
-                                            <constraint firstItem="gj2-zI-ily" firstAttribute="width" secondItem="ro8-e0-gL4" secondAttribute="width" id="f0Z-Pa-KSW"/>
-                                            <constraint firstItem="ro8-e0-gL4" firstAttribute="top" secondItem="Mob-0G-Db1" secondAttribute="topMargin" constant="20" id="jql-OH-8Ue"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="ro8-e0-gL4" secondAttribute="trailing" constant="2" id="pdO-He-Rts"/>
+                                            <constraint firstItem="gj2-zI-ily" firstAttribute="height" secondItem="S3G-Zc-5ga" secondAttribute="height" multiplier="0.8" id="dan-ec-t7b"/>
+                                            <constraint firstItem="gj2-zI-ily" firstAttribute="width" secondItem="S3G-Zc-5ga" secondAttribute="width" multiplier="0.9" id="pib-Lu-JyD"/>
+                                            <constraint firstItem="gj2-zI-ily" firstAttribute="centerX" secondItem="S3G-Zc-5ga" secondAttribute="centerX" id="rCC-Nq-KeL"/>
                                             <constraint firstItem="S3G-Zc-5ga" firstAttribute="leading" secondItem="Mob-0G-Db1" secondAttribute="leading" id="th1-bV-3fT"/>
-                                            <constraint firstItem="gj2-zI-ily" firstAttribute="top" secondItem="ro8-e0-gL4" secondAttribute="top" constant="4" id="xlh-OL-f7b"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="questionImage" destination="gj2-zI-ily" id="tCG-Uw-RiC"/>
@@ -574,13 +584,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUn-ee-2Gn">
+                                <rect key="frame" x="190" y="51.666666666666671" width="34" height="14.333333333333329"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="yP9-c9-Kvy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7dy-fm-RGg" firstAttribute="top" secondItem="plF-LA-rIq" secondAttribute="top" constant="46" id="01T-9I-Yte"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="width" secondItem="Y1Z-mU-Yrf" secondAttribute="width" multiplier="0.9" id="3Cc-3h-9Gl"/>
+                            <constraint firstItem="wUn-ee-2Gn" firstAttribute="top" secondItem="hTe-1V-DWJ" secondAttribute="bottom" id="4nQ-zo-gy8"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="top" secondItem="nTS-RE-7TA" secondAttribute="top" constant="20" id="Gmg-QL-51D"/>
+                            <constraint firstItem="wUn-ee-2Gn" firstAttribute="height" secondItem="plF-LA-rIq" secondAttribute="height" multiplier="0.0267" id="H5K-ed-yBt"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="centerX" secondItem="Y1Z-mU-Yrf" secondAttribute="centerX" id="KI7-IL-h0M"/>
+                            <constraint firstItem="wUn-ee-2Gn" firstAttribute="centerX" secondItem="Y1Z-mU-Yrf" secondAttribute="centerX" id="M3O-ym-vkH"/>
+                            <constraint firstItem="7dy-fm-RGg" firstAttribute="top" secondItem="wUn-ee-2Gn" secondAttribute="bottom" id="OWJ-TB-ss6"/>
                             <constraint firstItem="plF-LA-rIq" firstAttribute="bottom" secondItem="7dy-fm-RGg" secondAttribute="bottom" constant="21" id="SEz-6J-NXq"/>
                             <constraint firstItem="vuU-gR-bPL" firstAttribute="top" secondItem="plF-LA-rIq" secondAttribute="bottom" constant="28" id="axe-DW-bnG"/>
                             <constraint firstItem="vuU-gR-bPL" firstAttribute="width" secondItem="7dy-fm-RGg" secondAttribute="width" multiplier="0.9" id="fyE-hY-gbJ"/>
@@ -1020,21 +1040,21 @@
             <objects>
                 <viewController id="S7C-Hl-cW9" customClass="TwoSectionStudyCardContainerViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mve-lC-yUq">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="465.66666666666669"/>
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="464.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Wt-XQ-qV9" userLabel="TopSectionView">
-                                <rect key="frame" x="8" y="8" width="324" height="219"/>
+                                <rect key="frame" x="8" y="8" width="324" height="218.33333333333334"/>
                                 <subviews>
                                     <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GD6-4N-XnE" userLabel="TopTextView">
-                                        <rect key="frame" x="0.0" y="0.0" width="324" height="219"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="218.33333333333334"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IQButtonBarArrowUp.png" highlightedImage="IQButtonBarArrowDown.png" translatesAutoresizingMaskIntoConstraints="NO" id="DG0-O6-VlF" userLabel="TopImageView">
-                                        <rect key="frame" x="0.0" y="0.0" width="324" height="219"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="218.33333333333334"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1050,17 +1070,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2WR-mP-KXt" userLabel="BottomSectionView">
-                                <rect key="frame" x="8" y="238.66666666666663" width="324" height="219"/>
+                                <rect key="frame" x="8" y="238" width="324" height="218.33333333333337"/>
                                 <subviews>
                                     <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ftl-sg-0Pa" userLabel="BottomTextView">
-                                        <rect key="frame" x="0.0" y="0.0" width="324" height="219"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="218.33333333333334"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IQButtonBarArrowUp.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Rv-So-ib9" userLabel="BottomImageView">
-                                        <rect key="frame" x="0.0" y="0.0" width="324" height="219"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="218.33333333333334"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1105,18 +1125,18 @@
             <objects>
                 <viewController id="jnC-aF-EeZ" customClass="OneSectionStudyCardContainerViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zmF-kf-pte">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="465.66666666666669"/>
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="464.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MMP-Cz-gvU" userLabel="CardText">
-                                <rect key="frame" x="8" y="8" width="324" height="449.66666666666669"/>
+                                <rect key="frame" x="8" y="8" width="324" height="448.33333333333331"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xcaMoreDownArrow" translatesAutoresizingMaskIntoConstraints="NO" id="nrw-Wp-kjW" userLabel="CardImage">
-                                <rect key="frame" x="7.6666666666666572" y="7.6666666666666572" width="324" height="449.66666666666674"/>
+                                <rect key="frame" x="7.6666666666666572" y="7.6666666666666572" width="324" height="448.33333333333337"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1147,7 +1167,7 @@
             <objects>
                 <viewController id="1iX-Pk-JZ5" customClass="StudyCardResultsViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pPX-hq-nGz">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="465.66666666666669"/>
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="464.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dhz-5Z-2Qs">

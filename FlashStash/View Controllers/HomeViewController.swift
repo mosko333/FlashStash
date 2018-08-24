@@ -47,6 +47,12 @@ class HomeViewController: UIViewController {
             self.performSegue(withIdentifier: "addDeck", sender: self)
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        // If the device is an ipad, this statement adds the actionSheet from the button
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.barButtonItem = sender
+        }
+
         self.present(actionSheet, animated: true)
     }
     //

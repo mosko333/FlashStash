@@ -13,14 +13,20 @@ protocol DeckCreatedInNewFolderDelegate: class {
 }
 
 class AddDeckViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+    //
+    // MARK: - Properties
+    //
     var folder = FolderController.shared.folders[0]
     weak var delegate: DeckCreatedInNewFolderDelegate?
-    
+    //
+    // MARK: - Outlets
+    //
     @IBOutlet weak var deckNameTextField: UITextField!
     @IBOutlet weak var folderNameTextField: UITextField!
     @IBOutlet weak var folderNamePicker: UIPickerView!
-    
+    //
+    // MARK: - Lifecycle Functions
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         folderNamePicker.delegate = self
@@ -28,12 +34,9 @@ class AddDeckViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         folderNameTextField.inputView = folderNamePicker
         folderNameTextField.text = FolderController.shared.folders[0].name
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    //
+    // MARK: - Delegate @ Data Source Methods
+    //
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -52,6 +55,7 @@ class AddDeckViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         folderNameTextField.text = FolderController.shared.folders[row].name
+        folder = FolderController.shared.folders[row]
     }
     @IBAction func nextBarBtnTapped(_ sender: UIBarButtonItem) {
         guard let deckName = deckNameTextField.text else {return}
@@ -61,7 +65,9 @@ class AddDeckViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             performSegue(withIdentifier: "toDeckList", sender: self)
         }
     }
-    
+    //
+    // MARK: - Actions
+    //
     @IBAction func nextBtnTapped(_ sender: UIButton) {
         guard let deckName = deckNameTextField.text else {return}
         if !deckName.isEmpty {
