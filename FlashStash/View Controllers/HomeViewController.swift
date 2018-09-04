@@ -52,7 +52,7 @@ class HomeViewController: UIViewController {
         if let popoverController = actionSheet.popoverPresentationController {
             popoverController.barButtonItem = sender
         }
-
+        
         self.present(actionSheet, animated: true)
     }
     //
@@ -126,12 +126,12 @@ extension HomeViewController {
         let addAction = UIAlertAction(title: "Add", style: .default) { (_) in
             // AKA What happens when we press the add button VVVVVVV
             guard let folderName = folderNameTextField?.text,
-            !folderName.isEmpty else { return }
+                !folderName.isEmpty else { return }
             if let cell = cell {
                 let folder = self.findFolderForCell(cell: cell)
                 FolderController.shared.update(folder: folder, newName: folderName)
             } else {
-            FolderController.shared.create(folderName: folderName)
+                FolderController.shared.create(folderName: folderName)
             }
             self.folderCollectionView.reloadData()
             //            self.tableView.reloadData()
@@ -160,9 +160,9 @@ extension HomeViewController: FolderCellEditDelegate {
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Delete Your Stash", style: .destructive, handler: { (action:UIAlertAction) in
-                let folder = self.findFolderForCell(cell: cell)
-                FolderController.shared.delete(folder: folder)
-                self.folderCollectionView.reloadData()
+            let folder = self.findFolderForCell(cell: cell)
+            FolderController.shared.delete(folder: folder)
+            self.folderCollectionView.reloadData()
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

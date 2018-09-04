@@ -220,22 +220,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2E-e3-p5m" userLabel="CardContainerViews">
-                                        <rect key="frame" x="16" y="49.333333333333343" width="340" height="464.33333333333326"/>
+                                        <rect key="frame" x="16" y="48.333333333333343" width="340" height="465.33333333333326"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mk6-dL-AL6" userLabel="OneSection">
-                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="464.33333333333331"/>
+                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="465.33333333333331"/>
                                                 <connections>
                                                     <segue destination="jnC-aF-EeZ" kind="embed" id="En3-T9-AVD"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTg-UT-VEr" userLabel="TwoSections">
-                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="464.33333333333331"/>
+                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="465.33333333333331"/>
                                                 <connections>
                                                     <segue destination="S7C-Hl-cW9" kind="embed" id="z4a-vU-z3u"/>
                                                 </connections>
                                             </containerView>
                                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEo-lr-94A" userLabel="Results">
-                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="464.33333333333331"/>
+                                                <rect key="frame" x="-0.33333333333331439" y="0.0" width="340" height="465.33333333333331"/>
                                                 <connections>
                                                     <segue destination="1iX-Pk-JZ5" kind="embed" id="Dv1-52-4aU"/>
                                                 </connections>
@@ -860,6 +860,7 @@
                         <outlet property="cardImageView" destination="qET-2z-SRh" id="LFK-zD-8fh"/>
                         <outlet property="cardTextView" destination="4hu-pc-b36" id="A0d-vf-lwF"/>
                         <outlet property="deleteFieldUIButton" destination="5Lk-aS-S58" id="REg-cx-FPh"/>
+                        <segue destination="S7Q-S6-7i0" kind="show" identifier="fromSecOneToWebImageSearchVC" id="hWm-7Z-QYP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWL-Oc-94a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1029,18 +1030,87 @@
                         <outlet property="topDeleteBtn" destination="NbQ-Zo-kSe" id="50O-Vt-zcT"/>
                         <outlet property="topImageView" destination="BD4-PC-NMV" id="w6e-jK-af6"/>
                         <outlet property="topTextView" destination="686-XD-bz7" id="0cd-fx-hLK"/>
+                        <segue destination="S7Q-S6-7i0" kind="show" identifier="fromSecTwoToWebImageSearchVC" id="VCq-yf-o94"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JS-Qc-eg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3962" y="1107"/>
         </scene>
+        <!--Web Image Search View Controller-->
+        <scene sceneID="1Rh-fj-8pi">
+            <objects>
+                <viewController id="S7Q-S6-7i0" customClass="WebImageSearchViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NRK-Wd-QfP" customClass="WebImageSearchCollectionView">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="457"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="3hu-WE-sk9">
+                                <rect key="frame" x="0.0" y="0.0" width="340" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gRf-30-z2g">
+                                <rect key="frame" x="0.0" y="56" width="340" height="401"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fqu-ei-e5b">
+                                    <size key="itemSize" width="150" height="174"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="T2Z-gz-ttm" customClass="WebImageSearchCollectionViewCell" customModule="FlashStash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="174"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="174"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rqJ-d3-Pt5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="174"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="rqJ-d3-Pt5" firstAttribute="leading" secondItem="T2Z-gz-ttm" secondAttribute="leading" id="7Es-0r-Vta"/>
+                                            <constraint firstAttribute="trailing" secondItem="rqJ-d3-Pt5" secondAttribute="trailing" id="C18-bp-XN0"/>
+                                            <constraint firstItem="rqJ-d3-Pt5" firstAttribute="top" secondItem="T2Z-gz-ttm" secondAttribute="top" id="LvV-ek-dEi"/>
+                                            <constraint firstAttribute="bottom" secondItem="rqJ-d3-Pt5" secondAttribute="bottom" id="urs-PA-LHr"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="resultsImageView" destination="rqJ-d3-Pt5" id="h3H-J7-acx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3hu-WE-sk9" firstAttribute="leading" secondItem="ebD-Vo-Sfo" secondAttribute="leading" id="4Mk-B3-bUx"/>
+                            <constraint firstItem="3hu-WE-sk9" firstAttribute="trailing" secondItem="ebD-Vo-Sfo" secondAttribute="trailing" id="8hm-V1-BGM"/>
+                            <constraint firstItem="gRf-30-z2g" firstAttribute="top" secondItem="3hu-WE-sk9" secondAttribute="bottom" id="EGW-cL-6Ag"/>
+                            <constraint firstItem="gRf-30-z2g" firstAttribute="leading" secondItem="ebD-Vo-Sfo" secondAttribute="leading" id="HbO-AH-AUI"/>
+                            <constraint firstItem="gRf-30-z2g" firstAttribute="bottom" secondItem="ebD-Vo-Sfo" secondAttribute="bottom" id="Lmx-IX-VDB"/>
+                            <constraint firstItem="gRf-30-z2g" firstAttribute="trailing" secondItem="ebD-Vo-Sfo" secondAttribute="trailing" id="XQ2-Gx-qBE"/>
+                            <constraint firstItem="3hu-WE-sk9" firstAttribute="top" secondItem="ebD-Vo-Sfo" secondAttribute="top" id="zTY-3p-Fip"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ebD-Vo-Sfo"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageSearchResultsCollectionView" destination="gRf-30-z2g" id="Q5s-AP-6iq"/>
+                        <outlet property="searchBar" destination="3hu-WE-sk9" id="g5g-IG-Nu7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pj5-Lu-Cxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3692.753623188406" y="1692.7989130434785"/>
+        </scene>
         <!--Two Section Study Card Container View Controller-->
         <scene sceneID="oUy-n0-mXs">
             <objects>
                 <viewController id="S7C-Hl-cW9" customClass="TwoSectionStudyCardContainerViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mve-lC-yUq">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="464.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="465.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Wt-XQ-qV9" userLabel="TopSectionView">
@@ -1125,18 +1195,18 @@
             <objects>
                 <viewController id="jnC-aF-EeZ" customClass="OneSectionStudyCardContainerViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zmF-kf-pte">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="464.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="465.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MMP-Cz-gvU" userLabel="CardText">
-                                <rect key="frame" x="8" y="8" width="324" height="448.33333333333331"/>
+                                <rect key="frame" x="8" y="8" width="324" height="449.33333333333331"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xcaMoreDownArrow" translatesAutoresizingMaskIntoConstraints="NO" id="nrw-Wp-kjW" userLabel="CardImage">
-                                <rect key="frame" x="7.6666666666666572" y="7.6666666666666572" width="324" height="448.33333333333337"/>
+                                <rect key="frame" x="7.6666666666666572" y="7.6666666666666572" width="324" height="449.33333333333337"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1167,7 +1237,7 @@
             <objects>
                 <viewController id="1iX-Pk-JZ5" customClass="StudyCardResultsViewController" customModule="FlashStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pPX-hq-nGz">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="464.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="465.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dhz-5Z-2Qs">
@@ -1264,6 +1334,7 @@
         <image name="xcaNextBtn" width="124" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="hWm-7Z-QYP"/>
         <segue reference="Gw1-LR-OTL"/>
         <segue reference="yKP-2W-31S"/>
     </inferredMetricsTieBreakers>

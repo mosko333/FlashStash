@@ -11,7 +11,6 @@ import CoreData
 
 extension Folder {
     @discardableResult convenience init(name: String, context: NSManagedObjectContext = CoreDataStack.context) {
-        
         // initalizing the context for us to place our data into
         self.init(context: context)
         self.name = name

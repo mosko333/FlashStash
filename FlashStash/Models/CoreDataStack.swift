@@ -40,6 +40,5 @@ struct CoreDataStack {
         } catch let error {
             print("Error saving to persistant data \(#function) \(error) \(error.localizedDescription)")
         }
-        
     }
 }

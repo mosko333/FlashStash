@@ -87,7 +87,7 @@ class CreateCardViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(cardTopSectionFilled), name: .cardTopSectionFilled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(cardBottomSectionFilled), name: .cardBottomSectionFilled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteBottomSectionBtnTapped), name: .deleteBottomSectionBtnTapped, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(segueToOnlineImageSearch), name: .segueToOnlineImageSearch, object: nil)
         
         // DELETE
     }
@@ -118,6 +118,9 @@ class CreateCardViewController: UIViewController {
     }
     @objc func deleteBottomSectionBtnTapped() {
         tempCardController.deleteContentPosition(position: .bottom)
+    }
+    @objc func segueToOnlineImageSearch() {
+        performSegue(withIdentifier: "fromSecOneToWebImageSearchVC", sender: self)
     }
     
     

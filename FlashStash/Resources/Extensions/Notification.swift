@@ -17,6 +17,8 @@ extension Notification.Name {
     static let cardTopSectionFilled = Notification.Name("cardTopSectionFilled")
     static let cardBottomSectionFilled = Notification.Name("cardBottomSectionFilled")
     static let cardFlipped = Notification.Name("cardFlipped")
+    static let segueToOnlineImageSearch = Notification.Name("segueToOnlineImageSearch")
+    static let onlineImageSelected = Notification.Name("onlineImageSelected")
     
     // From CreateCardVC or StudyCardVC to ContainerView
     static let sendCardMedia = Notification.Name("sendCardMedia")

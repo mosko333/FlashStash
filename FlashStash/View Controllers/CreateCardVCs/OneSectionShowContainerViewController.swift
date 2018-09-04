@@ -36,6 +36,18 @@ class OneSectionShowContainerViewController: UIViewController, UITextViewDelegat
     }
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(addMedia), name: .sendCardMedia, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onlineImageSelected), name: .onlineImageSelected, object: nil)
+    }
+    @objc func onlineImageSelected(notification: Notification) {
+        guard let imageUrlString = notification.object as? String else { return }
+        OnlineImageController.fetchImageWith(urlString: imageUrlString ) { (image) in
+            let fetchedImage = image
+            DispatchQueue.main.async {
+                self.image = fetchedImage
+                self.setupCard()
+                NotificationCenter.default.post(name: .cardTopSectionFilled, object: fetchedImage)
+            }
+        }
     }
     @objc func addMedia(notification: Notification) {
         image = nil
@@ -148,9 +160,9 @@ extension OneSectionShowContainerViewController {
             }
         }))
         
-//        actionSheet.addAction(UIAlertAction(title: "Scan", style: .default, handler: { (action:UIAlertAction) in
-//
-//        }))
+        actionSheet.addAction(UIAlertAction(title: "Web Search", style: .default, handler: { (action:UIAlertAction) in
+            self.performSegue(withIdentifier: "fromSecOneToWebImageSearchVC", sender: self)
+        }))
         
         actionSheet.addAction(UIAlertAction(title: "Library", style: .default, handler: { (action:UIAlertAction) in
             imagePickerController.sourceType = .photoLibrary
@@ -162,8 +174,11 @@ extension OneSectionShowContainerViewController {
         if let popoverController = actionSheet.popoverPresentationController {
             popoverController.sourceView = sender
         }
-        
         self.present(actionSheet, animated: true)
+    }
+    
+    func segueToWebImageSearch() {
+        performSegue(withIdentifier: "fromSecOneToWebImageSearchVC", sender: self)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

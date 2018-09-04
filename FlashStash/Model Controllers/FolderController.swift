@@ -35,9 +35,9 @@ class FolderController {
         }
         return folderArray
     }
-    
-    init() {
-    }
+//    
+//    init() {
+//    }
     
     //C
     func create(folderName: String) {
